@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="@string/chat"
+        />
+
+    <item android:id="@+id/applications"
+        android:icon="@drawable/ic_applications"
+        android:title="@string/applied"
+        />
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/work"
+        android:title="@string/job"
+        />
+    <item
+        android:id="@+id/page2"
+        android:icon="@drawable/ic_account"
+        android:title="@string/my_account"
+        />
+    <item
+        android:id="@+id/page1"
+        android:icon="@drawable/ic_settings_applications_24"
+        android:title="@string/manage"
+        />
+
+
+</menu>
