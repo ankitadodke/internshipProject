@@ -2,7 +2,7 @@
     <string name="app_name">Find My Job</string>
     <string name="Title">Find My Job</string>
     <string name="sub_title">To Find Your Dream Job</string>
-    <string name="Register">"Login</string>
+    <string name="Register">Login</string>
     <string name="otp">Enter OTP</string>
     <string name="Submit">Submit</string>
     <string name="help">Help</string>
@@ -17,7 +17,7 @@
     <string name="no_internet_connection">No Internet Connection</string>
     <string name="retry">Retry</string>
     <string name="chat">Chat</string>
-    <string name="applied">Applied</string>
+    <string name="applied">My Applications</string>
     <string name="job">Job</string>
     <string name="my_account">My Account</string>
     <string name="manage">Manage</string>
@@ -27,4 +27,10 @@
     <string name="click_here">Click Here..</string>
     <string name="gmail">Gmail</string>
     <string name="hire_your_staff_here">Hire Your Staff Here</string>
+    <string name="search">Search</string>
+    <string name="everyone_can_get_job_now">Everyone can get Job Now</string>
+    <string name="finished">Finished</string>
+    <string name="skip">Lets get started</string>
+    <string name="lets_get_started">Lets get started</string>
+    <string name="skip_next">skip</string>
 </resources>

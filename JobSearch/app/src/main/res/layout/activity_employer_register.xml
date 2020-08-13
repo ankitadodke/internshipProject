@@ -100,7 +100,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/custom_btn"
+        android:background="@drawable/primary_btn_bg"
         android:text="@string/send_otp"
         android:textColor="@color/white"
         android:fontFamily="@font/open_sans_semibold"

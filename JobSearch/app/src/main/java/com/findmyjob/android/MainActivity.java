@@ -8,10 +8,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -94,6 +96,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_bar,menu);
+        MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView= (SearchView)menuItem.getActionView();
+        searchView.setQueryHint("Type here to search");
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
 }
 

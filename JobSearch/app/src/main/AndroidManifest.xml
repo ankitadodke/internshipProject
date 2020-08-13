@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login_employer"></activity>
+        <activity android:name=".login_employer" />
         <activity android:name=".otp_employer" />
         <activity android:name=".employer_register" />
         <activity android:name=".login" />
