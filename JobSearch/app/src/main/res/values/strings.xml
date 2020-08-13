@@ -2,7 +2,7 @@
     <string name="app_name">Find My Job</string>
     <string name="Title">Find My Job</string>
     <string name="sub_title">To Find Your Dream Job</string>
-    <string name="Register">"Register or Login</string>
+    <string name="Register">"Login</string>
     <string name="otp">Enter OTP</string>
     <string name="Submit">Submit</string>
     <string name="help">Help</string>

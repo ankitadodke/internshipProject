@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseUser mCurrentUser;
@@ -33,24 +34,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.curved_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.page1);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-
-                    case R.id.home:
-                        return true;
-                    case R.id.page2:
-                        startActivity(new Intent(getApplicationContext(),Home.class));
-                        overridePendingTransition(0,0);
-
-                }
-                return false;
-            }
-        });
+        BottomNavigationView bottomNav =  findViewById(R.id.curved_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(nvListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
 
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -80,6 +66,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener nvListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+                    switch (item.getItemId()) {
+                        case R.id.home:
+                            selectedFragment = new HomeFragment();
+                            break;
+                        case R.id.chat:
+                            selectedFragment = new ChatFragment();
+                            break;
+                        case R.id.my_account:
+                            selectedFragment = new MyAccountFragment();
+                            break;
+                        case R.id.settings:
+                            selectedFragment = new SettingsFragment();
+                            break;
+                        case R.id.applications:
+                            selectedFragment = new AppliedFragment();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+                    return true;
+                }
+            };
 
 
 }

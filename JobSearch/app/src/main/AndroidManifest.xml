@@ -23,7 +23,6 @@
         <activity android:name=".login_employer"></activity>
         <activity android:name=".otp_employer" />
         <activity android:name=".employer_register" />
-        <activity android:name=".Home" />
         <activity android:name=".login" />
         <activity android:name=".otp_generate" />
         <activity android:name=".register" />
