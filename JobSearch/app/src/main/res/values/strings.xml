@@ -33,4 +33,23 @@
     <string name="skip">Lets get started</string>
     <string name="lets_get_started">Lets get started</string>
     <string name="skip_next">skip</string>
+    <string name="profile">Profile</string>
+    <string name="resume">Resume</string>
+    <string name="preferences">Preferences</string>
+    <string name="user_name">User Name</string>
+    <string name="education">Education</string>
+    <string name="personal_details">Personal details</string>
+    <string name="education_details">Education Details</string>
+    <string name="add_basic_some_details">Add basic some details</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="location">Location</string>
+    <string name="name">Name</string>
+    <string name="profession">Profession</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
 </resources>
