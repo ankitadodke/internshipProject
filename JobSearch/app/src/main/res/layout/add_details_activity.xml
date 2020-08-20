@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.profile.AddDetails">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_basic_some_details"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/open_sans_semibold"
+        />
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:background="@drawable/text_input_bg"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="16dp"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/profession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:background="@drawable/text_input_bg"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="16dp"
+        android:hint="@string/profession"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/text_input_bg"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="16dp"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:background="@drawable/text_input_bg"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_baseline_local_phone_24"
+        android:drawablePadding="16dp"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:background="@drawable/text_input_bg"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="16dp"
+        android:hint="@string/location"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:background="@drawable/text_input_bg"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="16dp"
+        android:hint="@string/personal_address"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:text="@string/Submit"
+        android:textSize="20sp"
+        android:background="@drawable/primary_btn_bg"
+        />
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        />
+</LinearLayout>
+
+</ScrollView>

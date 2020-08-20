@@ -44,12 +44,19 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="email_address">Email Address</string>
-    <string name="location">Location</string>
-    <string name="name">Name</string>
-    <string name="profession">Profession</string>
+    <string name="location">Job Location</string>
+    <string name="name">Full Name</string>
+    <string name="profession">Job Profession</string>
     <string name="female">Female</string>
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="update">Update</string>
     <string name="cancel">Cancel</string>
+    <string name="personal_address">Personal Address
+    \n
+        line 1/ \n
+        line 2/ \n
+        city
+
+    </string>
 </resources>

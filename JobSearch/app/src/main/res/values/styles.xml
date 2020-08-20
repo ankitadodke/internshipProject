@@ -6,14 +6,29 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="background">@color/white</item>
-
+        <item name="android:windowBackground">@color/white</item>
     </style>
-    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <style name="AppThemeWithActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="background">@color/white</item>
     </style>
-
+    <style name="TextExtraSmall">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextSmall">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TextMedium">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextLarge">
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="TextExtraLarge">
+        <item name="android:textSize">24sp</item>
+    </style>
 
 </resources>
