@@ -19,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SplashScreen extends AppCompatActivity {
     private Context context;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,14 +40,23 @@ public class SplashScreen extends AppCompatActivity {
                     finish();
                 }
             }, 3000);
-        }
-        else {
+        } else {
             if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employer.toString())) {
-                startActivity(new Intent(getApplicationContext(), DashboardEmployer.class));
-                finish();
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(getApplicationContext(), DashboardEmployer.class));
+                        finish();
+                    }
+                }, 3000);
             } else if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employee.toString())) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                }, 3000);
             }
         }
     }

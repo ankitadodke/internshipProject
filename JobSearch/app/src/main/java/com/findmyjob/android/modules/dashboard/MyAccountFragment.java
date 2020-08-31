@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.findmyjob.android.modules.profile.AddDetails;
+import com.findmyjob.android.modules.profile.AddResume;
 import com.findmyjob.android.modules.profile.ProfileActivity;
 import com.findmyjob.android.R;
 
@@ -26,6 +27,7 @@ public class MyAccountFragment extends Fragment {
       View view= inflater.inflate(R.layout.my_account_fragment,container,false);
         TextView t1 = view.findViewById(R.id.profile);
         TextView t2 = view.findViewById(R.id.text2);
+        TextView t3 = view.findViewById(R.id.preferences);
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +37,14 @@ public class MyAccountFragment extends Fragment {
             }
         });
         t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddResume.class);
+                startActivity(intent);
+
+            }
+        });
+        t3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddDetails.class);

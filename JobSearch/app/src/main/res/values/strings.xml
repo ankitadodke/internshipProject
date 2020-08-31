@@ -59,4 +59,12 @@
         city
 
     </string>
+    <string name="upload_your_resume_here">Upload Your Resume Here</string>
+    <string name="name_mobile_number_and_email_id_is_important_in_resume">Name, Mobile number And Email Id is Important in Resume</string>
+    <string name="click_to_upload_resume">Click to upload resume</string>
+    <string name="only_in_pdf_and_doc">(only in Pdf and doc)</string>
+    <string name="view_your_resume">Click to create Resume</string>
+    <string name="dont_have_resume_n_create_resume_in_few_steps">dont have resume? \n create resume in few steps..</string>
+    <string name="_91_1234567890">+91 1234567890 |</string>
+    <string name="abc_gmail_com">abc@gmail.com</string>
 </resources>

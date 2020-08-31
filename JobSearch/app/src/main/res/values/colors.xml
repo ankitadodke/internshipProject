@@ -6,8 +6,10 @@
     <color name="colorCircle">#FFE4A5</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-    <color name="lightGray">#7CDADADA</color>
-    <color name="gray">#70372626</color>
-    <color name="navigation">#EFEDED</color>
-    <color name="text_bg">#F1F1F1</color>
+    <color name="lightGray">#FAFAFA</color>
+    <color name="gray">#791B1919</color>
+    <color name="navigation">#FAFAFA</color>
+    <color name="text_bg">#FAFAFA</color>
+    <color name="lightWhite">#FAFAFA</color>
+    <color name="darkGray">#DCD8D8</color>
 </resources>
