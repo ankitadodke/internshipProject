@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/manage"
-    android:textSize="15sp"
-    android:layout_centerInParent="true"
-    />
-</RelativeLayout>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/privacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:text="@string/privacy"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="16dp"
+
+        />
+    <TextView
+        android:id="@+id/security"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:text="@string/security"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:drawableStart="@drawable/ic_baseline_security_24"
+        android:drawablePadding="16dp"
+
+        />
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:text="@string/help_support"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:drawableStart="@drawable/ic_baseline_help_24"
+        android:drawablePadding="16dp"
+
+        />
+
+    <TextView
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:text="@string/logout"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:drawableStart="@drawable/ic_baseline_exit_to_app_24"
+        android:drawablePadding="16dp"
+
+        />
+
+
+</LinearLayout>

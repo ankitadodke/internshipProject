@@ -67,4 +67,10 @@
     <string name="dont_have_resume_n_create_resume_in_few_steps">dont have resume? \n create resume in few steps..</string>
     <string name="_91_1234567890">+91 1234567890 |</string>
     <string name="abc_gmail_com">abc@gmail.com</string>
+    <string name="logout">Logout</string>
+    <string name="help_support"><![CDATA[Help & support]]></string>
+    <string name="privacy">Privacy</string>
+    <string name="security">Security</string>
+    <string name="interview_tips">Interview Tips</string>
+    <string name="our_services">Our Services</string>
 </resources>
