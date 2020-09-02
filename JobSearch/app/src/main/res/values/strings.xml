@@ -35,12 +35,12 @@
     <string name="skip_next">skip</string>
     <string name="profile">Profile</string>
     <string name="resume">Resume</string>
-    <string name="preferences">Preferences</string>
+    <string name="preferences">Add Details</string>
     <string name="user_name">User Name</string>
     <string name="education">Education</string>
     <string name="personal_details">Personal details</string>
     <string name="education_details">Education Details</string>
-    <string name="add_basic_some_details">Add basic some details</string>
+    <string name="add_basic_some_details">Add some basic details</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="email_address">Email Address</string>
@@ -51,6 +51,7 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="update">Update</string>
+    <string name="look_the_part">Reserch by psychologists hassown that people decide whatthey think of you within the firdt four minutes of a first meting , so make sure that you look the part and have te perfect interview attire. </string>
     <string name="cancel">Cancel</string>
     <string name="personal_address">Personal Address
     \n
@@ -73,4 +74,16 @@
     <string name="security">Security</string>
     <string name="interview_tips">Interview Tips</string>
     <string name="our_services">Our Services</string>
+    <string name="add_resume_view_existing">View uploaded Resume</string>
+    <string name="add_resume_re_upload_file">Upload new Resume</string>
+    <string name="applications">Applications</string>
+    <string name="job_seekers">Job Seekers</string>
+    <string name="total_applications">Total Applications : 40</string>
+    <string name="apply_for_job">Apply for job</string>
+    <string name="get_hired">Get hired Now</string>
+    <string name="get_applications">Get applications</string>
+    <string name="hire_staff_now">Hire staff now</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_1_look_the_part">1. LOOK THE PART</string>
 </resources>

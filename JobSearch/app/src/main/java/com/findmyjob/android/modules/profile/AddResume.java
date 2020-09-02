@@ -27,8 +27,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.Objects;
 
 public class AddResume extends AppCompatActivity {
-    Button selectFile ;
-    FirebaseStorage storage;
+    Button selectFile,btnViewResume;
     FirebaseDatabase database;
     Uri pdfUri;
     FirebaseAuth fAuth;
@@ -36,18 +35,16 @@ public class AddResume extends AppCompatActivity {
     ProgressDialog progressDialog;
     PDFView pdfView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_resume_activity);
-        storage = FirebaseStorage.getInstance();
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         pdfView = findViewById(R.id.pdfViewer);
-        selectFile = findViewById(R.id.selectFile);
-
+        selectFile = findViewById(R.id.btnUploadResume);
+        btnViewResume = findViewById(R.id.btnViewResume);
 
         selectFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +57,21 @@ public class AddResume extends AppCompatActivity {
 
         });
 
+        storageReference.child("users/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "resume.pdf").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                if(uri!=null) {
+                    pdfUri = uri;
+                    selectFile.setText(getString(R.string.add_resume_re_upload_file));
+                    btnViewResume.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
+        btnViewResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { startActivity(new Intent(Intent.ACTION_VIEW, pdfUri)); }
+        });
     }
 
 
@@ -130,10 +141,8 @@ public class AddResume extends AppCompatActivity {
         if (requestCode == 86 && resultCode == RESULT_OK && data != null) {
             pdfUri=data.getData();
             uploadPdf(pdfUri);
-
         } else {
             Toast.makeText(AddResume.this, "Please select pdf", Toast.LENGTH_SHORT).show();
-
         }
     }
 }

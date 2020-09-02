@@ -1,146 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center">
 
-    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/firstName"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:background="@color/text_bg"
-        android:text="@string/name"
-        android:padding="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:drawablePadding="8dp"
-
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/profession"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:background="@color/text_bg"
-        android:text="@string/profession"
-        android:padding="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawablePadding="8dp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:drawableStart="@drawable/ic_baseline_email_24"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:background="@color/text_bg"
-        android:text="@string/email_address"
-        android:padding="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawablePadding="8dp"
-
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/phone"
-        android:drawableStart="@drawable/ic_baseline_local_phone_24"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:background="@color/text_bg"
-        android:text="@string/phone_number"
-        android:padding="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawablePadding="8dp"
-
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/address"
-        android:drawableStart="@drawable/ic_baseline_location_on_24"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:background="@color/text_bg"
-        android:text="@string/personal_address"
-        android:padding="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawablePadding="8dp"
-        />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/location"
-        android:drawableStart="@drawable/ic_baseline_location_on_24"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:background="@color/text_bg"
-        android:text="@string/location"
-        android:padding="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawablePadding="8dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="16dp"
-        android:weightSum="10"
-        >
-        <Button
-            android:id="@+id/update"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:background="@drawable/primary_btn_bg"
-            android:text="@string/update"
-            android:textColor="@color/white"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="32dp"
-            android:layout_gravity="start"
-            tools:ignore="ButtonStyle" />
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_bg"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/name"
 
-        <Button
-            android:id="@+id/cancel"
-            android:layout_width="0dp"
-            android:layout_weight="5"
+            />
+
+        <TextView
+            android:id="@+id/profession"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/secondary_btn_bg"
-            android:text="@string/cancel"
-            android:textColor="@color/black"
-            tools:ignore="ButtonStyle" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_bg"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/profession" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_bg"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/email_address"
+
+            />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_bg"
+            android:drawableStart="@drawable/ic_baseline_local_phone_24"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/phone_number"
+
+            />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_bg"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/personal_address" />
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_bg"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/location" />
 
     </LinearLayout>
 

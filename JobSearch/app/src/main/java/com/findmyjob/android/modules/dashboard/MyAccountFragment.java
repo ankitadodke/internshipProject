@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.findmyjob.android.modules.profile.AddDetails;
 import com.findmyjob.android.modules.profile.AddResume;
+import com.findmyjob.android.modules.profile.InterviewTips;
 import com.findmyjob.android.modules.profile.ProfileActivity;
 import com.findmyjob.android.R;
 
@@ -28,6 +29,7 @@ public class MyAccountFragment extends Fragment {
         TextView t1 = view.findViewById(R.id.profile);
         TextView t2 = view.findViewById(R.id.text2);
         TextView t3 = view.findViewById(R.id.preferences);
+        TextView t4 = view.findViewById(R.id.interviewTips);
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,14 @@ public class MyAccountFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddDetails.class);
+                startActivity(intent);
+
+            }
+        });
+        t4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), InterviewTips.class);
                 startActivity(intent);
 
             }
