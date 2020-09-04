@@ -9,8 +9,6 @@
     <string name="phone_number">Phone Number</string>
     <string name="enter_your_phone_number">Please Select Your Country \n And Enter Your Phone Number</string>
     <string name="send_otp">Send OTP</string>
-    <string name="login_via_gmail">Gmail</string>
-    <string name="try_another_way_to_login">Try another way to login</string>
     <string name="todo">TODO</string>
     <string name="phone">Phone</string>
     <string name="sign_out">sign out</string>
@@ -25,11 +23,9 @@
     <string name="get_your_dream_job_here">Find Your Job Here</string>
     <string name="to_hire_your_staff">To Hire Your staff</string>
     <string name="click_here">Click Here..</string>
-    <string name="gmail">Gmail</string>
     <string name="hire_your_staff_here">Hire Your Staff Here</string>
-    <string name="search">Search</string>
     <string name="everyone_can_get_job_now">Everyone can get Job Now</string>
-    <string name="finished">Finished</string>
+    <string name="finish">Finish</string>
     <string name="skip">Lets get started</string>
     <string name="lets_get_started">Lets get started</string>
     <string name="skip_next">skip</string>
@@ -40,7 +36,7 @@
     <string name="education">Education</string>
     <string name="personal_details">Personal details</string>
     <string name="education_details">Education Details</string>
-    <string name="add_basic_some_details">Add some basic details</string>
+    <string name="add_basic_some_details">Please add some basic details</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="email_address">Email Address</string>
@@ -51,21 +47,15 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="update">Update</string>
-    <string name="look_the_part">Reserch by psychologists hassown that people decide whatthey think of you within the firdt four minutes of a first meting , so make sure that you look the part and have te perfect interview attire. </string>
+    <string name="look_the_part">Research by psychologists has shown that people decide what they think of you within the first four minutes of a first meting , so make sure that you look the part and have te perfect interview attire. </string>
     <string name="cancel">Cancel</string>
-    <string name="personal_address">Personal Address
-    \n
-        line 1/ \n
-        line 2/ \n
-        city
-
-    </string>
+    <string name="personal_address"> Address </string>
     <string name="upload_your_resume_here">Upload Your Resume Here</string>
     <string name="name_mobile_number_and_email_id_is_important_in_resume">Name, Mobile number And Email Id is Important in Resume</string>
     <string name="click_to_upload_resume">Click to upload resume</string>
     <string name="only_in_pdf_and_doc">(only in Pdf and doc)</string>
     <string name="view_your_resume">Click to create Resume</string>
-    <string name="dont_have_resume_n_create_resume_in_few_steps">dont have resume? \n create resume in few steps..</string>
+    <string name="dont_have_resume_n_create_resume_in_few_steps">do not have resume? \n create resume in few steps..</string>
     <string name="_91_1234567890">+91 1234567890 |</string>
     <string name="abc_gmail_com">abc@gmail.com</string>
     <string name="logout">Logout</string>
@@ -86,4 +76,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="_1_look_the_part">1. LOOK THE PART</string>
+    <string name="int_tips_title_1">1. Look the part</string>
+    <string name="interview_tips_title_2">2. Do Your Research</string>
+    <string name="int_tips_title3">3. Practice</string>
+    <string name="int_tips_title_">4. Relax</string>
+    <string name="int_tips_title_4">5. Be honest!</string>
+    <string name="desc_1">Research by psychologists has shown that people decide what they think of you within the first four minutes of a first meting , so make sure that you look the part and have te perfect interview attire.</string>
+    <string name="desc_2">\"learn about company from sources such as info published  on social media and website, news articles and reviews on Glass door from current and previous employees \"</string>
+    <string name="desc_3">think about your skills and accomplishments that are relevant to the role and practice answering questions in a mock interview set up. Do not rehearse answers word for word, making a note of key point will suffice.</string>
+    <string name="desc_4">Remind yourself that you have been invited to interview because te company believe you may be a good fit for the job based on information you hve provided</string>
+    <string name="desc_5">The purpose of an interview is to meet you in person to determine whether your personality will be a fit for the company, so be honest with your answers.</string>
+    <string name="all_fields_are_mandatory">All Fields are mandatory</string>
+    <string name="total_applications_0">Total applications = 0</string>
+    <string name="sorry_msg">Sorry, we dont have any jobs on this page currently. we will add more jobs soon.</string>
 </resources>

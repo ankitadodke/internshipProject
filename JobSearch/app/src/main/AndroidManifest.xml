@@ -34,8 +34,12 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".modules.profile.AddDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
             android:theme="@style/AppThemeWithActionBar" />
-        <activity android:name=".modules.profile.ProfileActivity" />
+        <activity android:name=".modules.profile.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".modules.login.EmployerRegister"
             android:screenOrientation="portrait"

@@ -17,7 +17,7 @@
     android:id="@+id/finish"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/finished"
+    android:text="@string/finish"
     android:textColor="@color/white"
     android:background="@drawable/interview_tips_bg"
     android:layout_centerHorizontal="true"

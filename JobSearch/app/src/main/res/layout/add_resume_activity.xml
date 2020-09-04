@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_semibold"
+            android:fontFamily="@font/open_sans_semi_bold"
             android:gravity="center"
             android:text="@string/upload_your_resume_here"
             android:textColor="@color/colorPrimary"

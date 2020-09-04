@@ -6,8 +6,11 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/job"
+    android:text="@string/sorry_msg"
+    android:padding="@dimen/general_activity_padding"
+    android:gravity="center"
     android:textSize="15sp"
     android:layout_centerInParent="true"
+    android:drawableTop="@drawable/ic_baseline_mood_bad_24"
     />
 </RelativeLayout>

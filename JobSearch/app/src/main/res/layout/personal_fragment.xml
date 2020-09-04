@@ -1,112 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/firstName"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AppTheme.TIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/text_bg"
-            android:drawableStart="@drawable/ic_baseline_person_24"
-            android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/name"
+            android:layout_marginTop="0dp"
+            android:hint="@string/name">
 
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/eTxtFirstName"
+                style="@style/AppTheme.GeneralEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_person_24" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/profession"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AppTheme.TIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/text_bg"
-            android:drawableStart="@drawable/ic_baseline_person_24"
-            android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/profession" />
+            android:hint="@string/profession">
 
-        <TextView
-            android:id="@+id/email"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profession"
+                style="@style/AppTheme.GeneralEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AppTheme.TIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/text_bg"
-            android:drawableStart="@drawable/ic_baseline_email_24"
-            android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/email_address"
+            android:hint="@string/email_address">
 
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                style="@style/AppTheme.GeneralEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_email_24"
 
-        <TextView
-            android:id="@+id/phone"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AppTheme.TIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/text_bg"
-            android:drawableStart="@drawable/ic_baseline_local_phone_24"
-            android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/phone_number"
+            android:hint="@string/phone_number">
 
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                style="@style/AppTheme.GeneralEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_local_phone_24" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/address"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AppTheme.TIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/text_bg"
-            android:drawableStart="@drawable/ic_baseline_location_on_24"
-            android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/personal_address" />
+            android:hint="@string/personal_address">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address"
+                style="@style/AppTheme.GeneralEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_location_on_24" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/location"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AppTheme.TIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/text_bg"
-            android:drawableStart="@drawable/ic_baseline_location_on_24"
-            android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/location" />
+            android:hint="@string/location">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/location"
+                style="@style/AppTheme.GeneralEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_location_on_24" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-
 </ScrollView>

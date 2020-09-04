@@ -29,7 +29,7 @@
         android:layout_gravity="center"
         android:layout_margin="16dp"
         android:text="@string/retry"
-        android:fontFamily="@font/open_sans_semibold"
+        android:fontFamily="@font/open_sans_semi_bold"
         android:gravity="center"
         />
 

@@ -2,4 +2,7 @@
 <resources>
     <dimen name="general_activity_padding">16dp</dimen>
     <dimen name="general_section_top_margin">20dp</dimen>
+    <dimen name="card_corner">12dp</dimen>
+    <!--<dimen name="mtrl_textinput_box_stroke_width_default">3px</dimen>-->
+    <dimen name="mtrl_textinput_box_stroke_width_focused">3px</dimen>
 </resources>

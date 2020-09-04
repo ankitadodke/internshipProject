@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.findmyjob.android.R;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -21,11 +22,10 @@ import androidx.fragment.app.Fragment;
 
 public class PersonalFragment extends Fragment {
     View view;
-    String name, profession,phone, location,email;
-    TextView mName,mProf,mPhone,mLocation,Mphone,memail;
+    String name,phone,email;
+    TextInputEditText mName, mProf,mLocation,Mphone,memail, adrress;
     FirebaseFirestore fStore;
     FirebaseAuth firebaseAuth;
-    FirebaseUser mCurrentUser;
     StorageReference storageReference;
     public PersonalFragment(){
 
@@ -38,11 +38,12 @@ public class PersonalFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        mName = view.findViewById(R.id.firstName);
+        mName = view.findViewById(R.id.eTxtFirstName);
         mProf=view.findViewById(R.id.profession);
         mLocation=view.findViewById(R.id.location);
         Mphone=view.findViewById(R.id.phone);
         memail=view.findViewById(R.id.email);
+        adrress= view.findViewById(R.id.address);
 
 
         fStore.collection("users").document(this.firebaseAuth.getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -57,6 +58,7 @@ public class PersonalFragment extends Fragment {
                 memail.setText(documentSnapshot.getString("email"));
                 mLocation.setText(documentSnapshot.getString("location"));
                 mProf.setText(documentSnapshot.getString("profession"));
+                adrress.setText(documentSnapshot.getString("address"));
                 PersonalFragment.this.Mphone.setText(phone);
 
               }

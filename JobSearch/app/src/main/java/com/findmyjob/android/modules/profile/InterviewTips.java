@@ -2,10 +2,10 @@ package com.findmyjob.android.modules.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
 import android.animation.ArgbEvaluator;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.findmyjob.android.R;
@@ -21,7 +21,6 @@ public class InterviewTips extends AppCompatActivity {
     List<Tips> tips;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    Button finishBtn;
     Context context;
 
     @Override
@@ -30,11 +29,11 @@ public class InterviewTips extends AppCompatActivity {
         setContentView(R.layout.interview_tips_activity);
         context=this;
         tips = new ArrayList<>();
-        tips.add(new Tips(R.drawable.lookthepart,"1. Look the part","Research by psychologists has shown that people decide what they think of you within the first four minutes of a first meting , so make sure that you look the part and have te perfect interview attire."));
-        tips.add(new Tips(R.drawable.research,"2. Do Your Research","learn about company from sources such as info published  on social media and website, news articles and reviews on Glassdoor from from current and previous employees "));
-        tips.add(new Tips(R.drawable.practice,"3. Practice","think about your skills and accomplishments that are relevant to the role and practice answering questions in a mock interview set up. Dont rehearse answers word for word, making a note of key point will suffice."));
-        tips.add(new Tips(R.drawable.relax,"4. Relax","Remind yourself that you have been invited to interview because te company believe you may be a good fit for the job based on information you hve provided"));
-        tips.add(new Tips(R.drawable.honesty,"5. Be honest!","The purpose of an interview is to meet you in person to determine whether your personality will be a fit for the company, so be honest with your answers."));
+        tips.add(new Tips(R.drawable.lookthepart,getString(R.string.int_tips_title_1),getString(R.string.desc_1)));
+        tips.add(new Tips(R.drawable.research,getString(R.string.interview_tips_title_2),getString(R.string.desc_2)));
+        tips.add(new Tips(R.drawable.practice,getString(R.string.int_tips_title3),getString(R.string.desc_3)));
+        tips.add(new Tips(R.drawable.relax,getString(R.string.int_tips_title_),getString(R.string.desc_4)));
+        tips.add(new Tips(R.drawable.honesty,getString(R.string.int_tips_title_4),getString(R.string.desc_5)));
         adapter = new Adapter(tips, this);
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
@@ -70,6 +69,14 @@ public class InterviewTips extends AppCompatActivity {
             @Override
             public void onPageScrollStateChanged(int state) {
 
+            }
+        });
+
+        Button finishBtn = findViewById(R.id.finish);
+        finishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

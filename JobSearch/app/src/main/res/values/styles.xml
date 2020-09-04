@@ -15,6 +15,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="background">@color/white</item>
     </style>
+
     <style name="SliderAppThemeWithActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/lightWhite</item>
@@ -40,6 +41,41 @@
     </style>
     <style name="TextExtraLarge">
         <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTheme.GeneralEditTextStyle">
+        <item name="android:theme">@style/Platform.MaterialComponents</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <!--<item name="android:background">@drawable/rectangular_border</item>-->
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+
+    <style name="AppTheme.TIL" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:theme">@style/Platform.MaterialComponents</item>
+        <item name="hintTextAppearance">@style/AppTheme.HintTextAppearance</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/card_corner</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/card_corner</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/card_corner</item>
+        <item name="boxCornerRadiusTopStart">@dimen/card_corner</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AppTheme.HintTextAppearance" >
+        <item name="android:textSize">12sp</item>
     </style>
 
 </resources>

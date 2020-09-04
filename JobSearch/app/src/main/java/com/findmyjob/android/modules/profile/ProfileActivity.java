@@ -51,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
         text = findViewById(R.id.text1);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+
         storageReference = FirebaseStorage.getInstance().getReference();
 
         fStore.collection("users").document(Objects.requireNonNull(this.fAuth.getCurrentUser()).getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -126,12 +127,12 @@ public class ProfileActivity extends AppCompatActivity {
                     }
                 });
 
-                Toast.makeText(ProfileActivity.this, "img Uploaded..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Image Uploaded..", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ProfileActivity.this, "img Uploading failed..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Image Uploading failed..", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
