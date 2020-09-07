@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="16dp"
-            android:background="@drawable/primary_btn_bg"
+            android:background="@drawable/primary_btn_bg_enabled"
             android:gravity="center"
             android:text="@string/click_to_upload_resume"
             android:textColor="@color/white" />
@@ -54,7 +54,7 @@
 
         <Button
             android:id="@+id/btnViewResume"
-            android:background="@drawable/primary_btn_bg"
+            android:background="@drawable/primary_btn_bg_enabled"
             android:textColor="@color/white"
             android:text="@string/add_resume_view_existing"
             android:layout_marginTop="20dp"

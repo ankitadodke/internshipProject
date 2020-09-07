@@ -3,6 +3,8 @@ package com.findmyjob.android.modules.login;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,9 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegisterActivity extends AppCompatActivity {
 
     private Context context;
-
     private Spinner mCountryCode;
-    private EditText mPhoneNumber;
+    private EditText eTxtMobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,39 +37,42 @@ public class RegisterActivity extends AppCompatActivity {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, EmployerRegister.class);
-                startActivity(intent);
-
-
+                startActivity(new Intent(context, EmployerRegister.class));
             }
         });
 
-
         mCountryCode = findViewById(R.id.country_code_text);
-        mCountryCode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
-        mPhoneNumber = findViewById(R.id.phone_number_text);
-        Button mGenerateBtn = findViewById(R.id.generate_btn);
+        mCountryCode.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
+        eTxtMobile = findViewById(R.id.eTxtMobile);
+        final Button btnLogin = findViewById(R.id.btnLogin);
 
+        eTxtMobile.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
-        mGenerateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
+                btnLogin.setEnabled(str!=null && str.toString().trim().length() > 4);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 String code = CountryData.countryAreaCodes[mCountryCode.getSelectedItemPosition()];
-                String number = mPhoneNumber.getText().toString().trim();
+                String number = eTxtMobile.getText().toString().trim();
 
                 if (number.isEmpty() || number.length() < 10) {
-
-                    mPhoneNumber.setError("Valid Phone Number Is required");
-                    mPhoneNumber.requestFocus();
+                    eTxtMobile.setError("Please enter mobile number");
+                    eTxtMobile.requestFocus();
                     return;
                 }
-                String phonenumber = "+" + code + number;
-
-                startActivity(OTPActivity.getStartIntent(context,phonenumber, UserRoles.Employee.toString()));
-                SaveSharedPreference.setUserId(context,phonenumber,UserRoles.Employee.toString());
-
+                String phoneNumber = "+" + code + number;
+                startActivity(OTPActivity.getStartIntent(context,phoneNumber, UserRoles.Employee.toString()));
+                SaveSharedPreference.setUserId(context,phoneNumber,UserRoles.Employee.toString());
             }
         });
     }
@@ -76,14 +80,10 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         if (FirebaseAuth.getInstance().getCurrentUser() != null){
-
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(context, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
-
     }
-
 }

@@ -16,6 +16,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -45,8 +47,7 @@ public class PersonalFragment extends Fragment {
         memail=view.findViewById(R.id.email);
         adrress= view.findViewById(R.id.address);
 
-
-        fStore.collection("users").document(this.firebaseAuth.getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        fStore.collection("users").document(Objects.requireNonNull(this.firebaseAuth.getCurrentUser()).getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 PersonalFragment fragmentPersonal= PersonalFragment.this;

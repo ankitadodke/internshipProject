@@ -16,6 +16,9 @@ import com.findmyjob.android.modules.login.RegisterActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.findmyjob.android.model.constants.SaveSharedPreference.getUserId;
+import static com.findmyjob.android.model.constants.SaveSharedPreference.getUserType;
+
 public class SplashScreen extends AppCompatActivity {
     private Context context;
 
@@ -31,32 +34,31 @@ public class SplashScreen extends AppCompatActivity {
         findViewById(R.id.appTitle).setAnimation(AnimationUtils.loadAnimation(this, R.anim.bottom_animation));
         findViewById(R.id.appSubTitle).setAnimation(AnimationUtils.loadAnimation(this, R.anim.bottom_animation));
 
-        if ((SaveSharedPreference.getUserId(context)).length() == 0) {
-
+        if ((getUserId(context)).length() == 0) {
             (new Handler()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     startActivity(new Intent(context, RegisterActivity.class));
                     finish();
                 }
-            }, 3000);
+            }, 1500);
         } else {
-            if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employer.toString())) {
+            if ((getUserType(context)).equalsIgnoreCase(UserRoles.Employer.toString())) {
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(getApplicationContext(), DashboardEmployer.class));
+                        startActivity(new Intent(context, DashboardEmployer.class));
                         finish();
                     }
-                }, 3000);
-            } else if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employee.toString())) {
+                }, 1500);
+            } else if ((getUserType(context)).equalsIgnoreCase(UserRoles.Employee.toString())) {
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(context, MainActivity.class));
                         finish();
                     }
-                }, 3000);
+                }, 1500);
             }
         }
     }

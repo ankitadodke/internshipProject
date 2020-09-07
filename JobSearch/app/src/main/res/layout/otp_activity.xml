@@ -59,8 +59,8 @@
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:padding="8dp"
-        android:background="@drawable/primary_btn_bg"
-        android:text="@string/Submit"
+        android:background="@drawable/primary_btn_bg_enabled"
+        android:text="@string/submit"
         android:textColor="@color/white"
         android:textSize="15sp"/>
     <ProgressBar

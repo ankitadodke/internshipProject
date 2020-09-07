@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:weightSum="10"
+    android:layout_marginBottom="15dp"
+    android:padding="10dp"
+    android:baselineAligned="false">
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="5"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtCompanyName"
+        style="@style/TextMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/general_top_margin"
+        tools:text="ABC company" />
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextSmall"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="16dp"
+        android:text="@string/location"/>
+
+    <TextView
+        android:id="@+id/txtJobTitle"
+        style="@style/TextSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="16dp"
+        tools:text="Project Manager" />
+
+    <TextView
+        android:id="@+id/txtSalary"
+        style="@style/TextSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_baseline_monetization_on_24"
+        android:drawablePadding="16dp"
+        tools:text="60,000/-" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/companyLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/app_icon"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -2,103 +2,201 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
-
+   >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:hint="@string/name">
+            android:background="@drawable/rounded_tint_background">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/eTxtFirstName"
-                style="@style/AppTheme.GeneralEditTextStyle"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_person_24" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/general_activity_padding">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
+                <TextView
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_info_24"
+                    android:drawablePadding="8dp"
+                    android:gravity="start"
+                    android:padding="@dimen/general_activity_padding"
+                    android:text="@string/about_me" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/about_me">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/eTextAboutMe"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/general_activity_padding"
+                        android:text="@string/aboutMeMsg" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/profession">
+            android:layout_marginTop="@dimen/general_top_margin"
+            android:background="@drawable/rounded_tint_background">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/profession"
-                style="@style/AppTheme.GeneralEditTextStyle"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/general_activity_padding">
 
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_personal_info"
+                    android:drawablePadding="8dp"
+                    android:gravity="start"
+                    android:padding="@dimen/general_activity_padding"
+                    android:text="@string/personal_information" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/eTxtFirstName"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_person_outline_24" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/profession">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profession"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_work_outline_24"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_mail_outline_24"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_local_phone_24" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/personal_address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_location_on_24" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/location"
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_location_on_24" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email_address">
+            android:layout_marginTop="@dimen/general_section_top_margin">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
-                style="@style/AppTheme.GeneralEditTextStyle"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:orientation="vertical"
+                android:padding="@dimen/general_activity_padding">
 
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_baseline_color_lens_24"
+                    android:drawablePadding="8dp"
+                    android:padding="@dimen/general_activity_padding"
+                    android:text="@string/hobbies" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/phone_number">
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTheme.TIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/hobbies">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phone"
-                style="@style/AppTheme.GeneralEditTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_local_phone_24" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/personal_address">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address"
-                style="@style/AppTheme.GeneralEditTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_location_on_24" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/location">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/location"
-                style="@style/AppTheme.GeneralEditTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_location_on_24" />
-        </com.google.android.material.textfield.TextInputLayout>
-
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/AppTheme.GeneralEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
 </ScrollView>

@@ -4,7 +4,7 @@
     <string name="sub_title">To Find Your Dream Job</string>
     <string name="Register">Login</string>
     <string name="otp">Enter OTP</string>
-    <string name="Submit">Submit</string>
+    <string name="submit">Submit</string>
     <string name="help">Help</string>
     <string name="phone_number">Phone Number</string>
     <string name="enter_your_phone_number">Please Select Your Country \n And Enter Your Phone Number</string>
@@ -33,7 +33,7 @@
     <string name="resume">Resume</string>
     <string name="preferences">Add Details</string>
     <string name="user_name">User Name</string>
-    <string name="education">Education</string>
+    <string name="education">Education &amp; Qualification </string>
     <string name="personal_details">Personal details</string>
     <string name="education_details">Education Details</string>
     <string name="add_basic_some_details">Please add some basic details</string>
@@ -89,4 +89,43 @@
     <string name="all_fields_are_mandatory">All Fields are mandatory</string>
     <string name="total_applications_0">Total applications = 0</string>
     <string name="sorry_msg">Sorry, we dont have any jobs on this page currently. we will add more jobs soon.</string>
+    <string name="about_me">About me</string>
+    <string name="aboutMeMsg">I am hard working and dedicated person. I am energetic person. I am an excellent team worker. I am looking for opertunities in your company.</string>
+    <string name="qualification">Qualification</string>
+    <string name="school">School</string>
+    <string name="school_medium">School Medium</string>
+    <string name="how_i_speak_english">How I speak English</string>
+    <string name="certificates">Certificates</string>
+    <string name="basic_certificates">Basic certificates</string>
+    <string name="skills">Skills</string>
+    <string name="basic_skills">Basic skills</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="title_activity_employer_dashboard">EmployerDashboard</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="dashboard_post_new_job">Post new Job</string>
+    <string name="activity_title_post_job">Post New Job</string>
+    <string name="post_job_company_profile">Company Profile</string>
+    <string name="post_job_company_name">Company Name</string>
+    <string name="post_job_company_address">Company Location</string>
+    <string name="post_job_location">Job Location</string>
+    <string name="post_job_description">Job Description</string>
+    <string name="post_job_title">Job title/Post title</string>
+    <string name="post_job_required_skills">Skills required</string>
+    <string name="post_job_pay_scale">Pay Scale</string>
+    <string name="post_job_pay_scale_note">Please input amount in INR and on per month basis.</string>
+    <string name="activity_title_view_jobs">View Jobs</string>
+    <string name="no_jobs_found">No jobs found</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="add_company_logo">Add Company Logo</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="hr_name">HR name</string>
 </resources>

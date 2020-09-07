@@ -22,8 +22,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.profile.InterviewTips"
-            android:theme="@style/SliderAppThemeWithActionBar"/>
+        <activity android:name=".modules.employer.EmployerDetails"></activity>
+        <activity android:name=".modules.emplyee.ViewJobsActivity" />
+        <activity android:name=".modules.employer.postJob.PostJobActivity" />
+        <activity
+            android:name=".modules.employer.EmployerDashboard"
+            android:label="@string/title_activity_employer_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".modules.profile.InterviewTips"
+            android:theme="@style/SliderAppThemeWithActionBar" />
         <activity android:name=".modules.profile.ViewPdf" />
         <activity
             android:name=".modules.profile.AddResume"
@@ -35,9 +43,10 @@
         <activity
             android:name=".modules.profile.AddDetails"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppThemeWithActionBar" />
-        <activity android:name=".modules.profile.ProfileActivity"
+            android:theme="@style/AppThemeWithActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".modules.profile.ProfileActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity

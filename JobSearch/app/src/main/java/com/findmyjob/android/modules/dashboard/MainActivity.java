@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.findmyjob.android.R;
+import com.findmyjob.android.modules.emplyee.ViewJobsActivity;
 import com.findmyjob.android.modules.profile.AddDetails;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectedFragment = null;
                     switch (item.getItemId()) {
                         case R.id.home:
+                            startActivity(ViewJobsActivity.getStartIntent(context));
                             selectedFragment = new HomeFragment();
                             break;
                         case R.id.my_account:

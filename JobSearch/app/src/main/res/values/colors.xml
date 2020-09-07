@@ -15,4 +15,6 @@
     <color name="darkGray">#DCD8D8</color>
     <color name="tips_bg">#9DDCFB</color>
     <color name="tips_bg2">#9DDCFB</color>
+    <color name="colorDisabled">#F5BEBEBE</color>
+    <color name="errorRed">#FF0000</color>
 </resources>

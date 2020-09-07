@@ -36,7 +36,7 @@ public class EmployerRegister extends AppCompatActivity {
         mCountryCode = findViewById(R.id.country_code_text);
         mCountryCode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
         mPhoneNumber = findViewById(R.id.phone_number_text);
-        Button mGenerateBtn = findViewById(R.id.generate_btn);
+        Button mGenerateBtn = findViewById(R.id.btnLogin);
 
 
         mGenerateBtn.setOnClickListener(new View.OnClickListener() {
