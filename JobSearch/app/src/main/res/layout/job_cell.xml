@@ -3,63 +3,173 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:weightSum="10"
     android:layout_marginBottom="15dp"
-    android:padding="10dp"
-    android:baselineAligned="false">
-<LinearLayout
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_weight="5"
+    android:background="@color/white"
+    android:baselineAligned="false"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/txtCompanyName"
-        style="@style/TextMedium"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        android:padding="10dp"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtCompanyName"
+                style="@style/TextMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/general_top_margin"
+                tools:text="ABC company" />
+
+            <TextView
+                android:id="@+id/eTxtJobLocation"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:drawablePadding="16dp"
+                tools:text="@string/location" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <ImageView
+                android:id="@+id/companyLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:contentDescription="@null"
+                android:src="@drawable/app_icon" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/txtJobTitle"
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_baseline_work_outline_24"
+            android:drawablePadding="16dp"
+            android:layout_marginStart="10dp"
+            tools:text="Project Manager" />
+
+        <TextView
+            android:id="@+id/txtSalary"
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_baseline_account_balance_wallet_24"
+            android:drawablePadding="16dp"
+            tools:text="60,000/-" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/general_top_margin"
-        tools:text="ABC company" />
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextSmall"
-        android:drawableStart="@drawable/ic_baseline_location_on_24"
-        android:drawablePadding="16dp"
-        android:text="@string/location"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtJobTitle"
-        style="@style/TextSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawablePadding="16dp"
-        tools:text="Project Manager" />
+        <TextView
+            android:id="@+id/txtContact"
+            style="@style/TextMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/general_top_margin"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/contact_details" />
+        <TextView
+            android:id="@+id/etxtHrName"
+            style="@style/TextSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_baseline_person_outline_24"
+            android:drawablePadding="16dp"
+            android:textColor="@color/black"
+            tools:text="@string/hr_name"
+            />
 
-    <TextView
-        android:id="@+id/txtSalary"
-        style="@style/TextSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/ic_baseline_monetization_on_24"
-        android:drawablePadding="16dp"
-        tools:text="60,000/-" />
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="5"
-        android:layout_height="wrap_content"
-        >
-        <ImageView
-            android:id="@+id/companyLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/app_icon"
-            android:contentDescription="@null" />
+            <TextView
+                android:id="@+id/etxtmail"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="16dp"
+                tools:text="@string/email_address" />
+
+            <TextView
+                android:id="@+id/etxtMobileNo"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@drawable/ic_baseline_local_phone_24"
+                android:drawablePadding="16dp"
+                tools:text="@string/phone_number" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="5"
+                android:background="@drawable/primary_btn_bg"
+                android:drawableStart="@drawable/ic_baseline_local_phone_24"
+                android:drawableTint="@color/white"
+                android:padding="@dimen/general_top_margin"
+                android:text="@string/call_now"
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle,UnusedAttribute" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_weight="5"
+                android:background="@drawable/primary_btn_bg"
+                android:drawableStart="@drawable/ic_applications"
+                android:drawableTint="@color/white"
+                android:padding="@dimen/general_top_margin"
+                android:text="@string/apply_now"
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle,UnusedAttribute" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

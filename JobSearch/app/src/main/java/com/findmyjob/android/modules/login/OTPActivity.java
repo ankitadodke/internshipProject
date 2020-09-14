@@ -9,14 +9,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.findmyjob.android.R;
 import com.findmyjob.android.model.constants.SaveSharedPreference;
 import com.findmyjob.android.model.customObjects.UserModel;
 import com.findmyjob.android.model.customObjects.UserRoles;
-import com.findmyjob.android.modules.dashboard.MainActivity;
+import com.findmyjob.android.modules.employee.ViewJobsActivity;
 import com.findmyjob.android.modules.employer.DashboardEmployer;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,6 +30,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class OTPActivity extends AppCompatActivity {
@@ -123,7 +123,7 @@ public class OTPActivity extends AppCompatActivity {
                             SaveSharedPreference.setUserId(context,mobileNumber,UserRoles.Employer.toString());
                         }
                         else if(user.getRole().equalsIgnoreCase(UserRoles.Employee.toString())) {
-                            targetIntent = new Intent(context, MainActivity.class);
+                            targetIntent = new Intent(context, ViewJobsActivity.class);
                             SaveSharedPreference.setUserId(context, mobileNumber, UserRoles.Employee.toString());
                         }
                     }
@@ -140,7 +140,7 @@ public class OTPActivity extends AppCompatActivity {
                         }
                         else {
 
-                            targetIntent = new Intent(context, MainActivity.class);
+                            targetIntent = new Intent(context, ViewJobsActivity.class);
                             SaveSharedPreference.setUserId(context, mobileNumber, UserRoles.Employee.toString());
                         }
                     }

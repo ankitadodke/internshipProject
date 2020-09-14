@@ -8,9 +8,8 @@ import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 
 import com.findmyjob.android.R;
-import com.findmyjob.android.model.constants.SaveSharedPreference;
 import com.findmyjob.android.model.customObjects.UserRoles;
-import com.findmyjob.android.modules.dashboard.MainActivity;
+import com.findmyjob.android.modules.employee.ViewJobsActivity;
 import com.findmyjob.android.modules.employer.DashboardEmployer;
 import com.findmyjob.android.modules.login.RegisterActivity;
 
@@ -55,7 +54,7 @@ public class SplashScreen extends AppCompatActivity {
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(context, MainActivity.class));
+                        startActivity(new Intent(context, ViewJobsActivity.class));
                         finish();
                     }
                 }, 1500);

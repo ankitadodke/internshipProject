@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.findmyjob.android.R;
-import com.findmyjob.android.modules.dashboard.MainActivity;
+import com.findmyjob.android.modules.employee.ViewJobsActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -120,7 +120,7 @@ public class AddDetails extends AppCompatActivity {
                         sb.append("User Profile Created");
                         sb.append(userID);
 
-                        startActivity(new Intent(AddDetails.this, MainActivity.class));
+                        startActivity(new Intent(AddDetails.this, ViewJobsActivity.class));
                         finish();
 
                     }

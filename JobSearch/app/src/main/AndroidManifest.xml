@@ -22,13 +22,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.employer.EmployerDetails"></activity>
-        <activity android:name=".modules.emplyee.ViewJobsActivity" />
-        <activity android:name=".modules.employer.postJob.PostJobActivity" />
-        <activity
-            android:name=".modules.employer.EmployerDashboard"
-            android:label="@string/title_activity_employer_dashboard"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".modules.employee.MyCalls" />
+        <activity android:name=".modules.employee.Settings" />
+        <activity android:name=".modules.employee.MyAccount" />
+        <activity android:name=".modules.employee.ViewJobsActivity"  android:screenOrientation="portrait" />
+        <activity android:name=".modules.employer.postJob.PostJobActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".modules.profile.InterviewTips"
             android:theme="@style/SliderAppThemeWithActionBar" />
@@ -64,9 +64,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".modules.dashboard.MainActivity"
-            android:theme="@style/AppThemeWithActionBar" />
     </application>
 
 </manifest>

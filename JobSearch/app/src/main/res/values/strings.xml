@@ -126,6 +126,8 @@
     <string name="no_jobs_found">No jobs found</string>
     <string name="personal_information">Personal Information</string>
     <string name="add_company_logo">Add Company Logo</string>
-    <string name="contact_details">Contact Details</string>
+    <string name="contact_details">HR Contact Details</string>
     <string name="hr_name">HR name</string>
+    <string name="apply_now">Apply Now</string>
+    <string name="call_now">Call Now</string>
 </resources>

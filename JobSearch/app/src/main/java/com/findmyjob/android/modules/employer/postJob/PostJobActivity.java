@@ -45,9 +45,9 @@ public class PostJobActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
     ProgressDialog progressDialog;
-    TextInputEditText eTxtCompanyName, eTxtCompanyLocation, eTxtJobLocation, eTxtJobTitle, eTxtSkillsRequired, eTxtPayScale;
+    TextInputEditText eTxtCompanyName, eTxtCompanyLocation, eTxtJobLocation, eTxtJobTitle, eTxtSkillsRequired, eTxtPayScale,eTxtHrName,eTxtHrContact,eTxtEmail;
     Button btnSubmit;
-    String companyName, location, jobLocation, jobTitle, skillSets, payScale;
+    String companyName, location, jobLocation, jobTitle, skillSets, payScale, hrName,hrEmail,hrPhone;
     DatabaseReference dbRefJobs = FirebaseDatabase.getInstance().getReference("jobs");
 
     public static Intent getStartIntent(Context context) {
@@ -71,6 +71,9 @@ public class PostJobActivity extends AppCompatActivity {
         eTxtSkillsRequired = findViewById(R.id.eTxtSkillsRequired);
         eTxtPayScale = findViewById(R.id.eTxtPayScale);
         btnSubmit = findViewById(R.id.btnPostJob);
+        eTxtHrName= findViewById(R.id.HRName);
+        eTxtHrContact= findViewById(R.id.etxtMobileNo);
+        eTxtEmail=findViewById(R.id.etxtmail);
 
         StorageReference profileRef = storageReference.child("jobs/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "logo.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -108,6 +111,22 @@ public class PostJobActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
             }
         });
+        eTxtHrName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
+                hrName = str.toString().trim();
+                validate();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
 
         eTxtCompanyLocation.addTextChangedListener(new TextWatcher() {
             @Override
@@ -157,6 +176,22 @@ public class PostJobActivity extends AppCompatActivity {
             }
         });
 
+        eTxtJobTitle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
+                jobTitle = str.toString().trim();
+                validate();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
         eTxtSkillsRequired.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -165,6 +200,22 @@ public class PostJobActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence str, int i, int i1, int i2) {
                 skillSets = str.toString().trim();
+                validate();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
+        eTxtEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
+                hrEmail = str.toString().trim();
                 validate();
             }
 
@@ -189,6 +240,22 @@ public class PostJobActivity extends AppCompatActivity {
             }
         });
 
+        eTxtHrContact.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
+                hrPhone = str.toString().trim();
+                validate();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -200,7 +267,10 @@ public class PostJobActivity extends AppCompatActivity {
                         dbRefJobs.child(key).child("jobLocation").setValue(jobLocation);
                         dbRefJobs.child(key).child("jobTitle").setValue(jobTitle);
                         dbRefJobs.child(key).child("skills").setValue(skillSets);
-                        dbRefJobs.child(key).child("payScale").setValue(payScale + " INR per month");
+                        dbRefJobs.child(key).child("payScale").setValue(payScale + "/month");
+                        dbRefJobs.child(key).child("hrName").setValue(hrName);
+                        dbRefJobs.child(key).child("hrContact").setValue(hrPhone);
+                        dbRefJobs.child(key).child("hrEmail").setValue(hrEmail);
                     }
                     Toast.makeText(context, "Job requirement posted successfully", Toast.LENGTH_SHORT).show();
                     finish();
@@ -213,6 +283,7 @@ public class PostJobActivity extends AppCompatActivity {
     private void validate() {
         btnSubmit.setEnabled(companyName != null && !companyName.isEmpty() && location != null && !location.isEmpty() && jobLocation != null && !jobLocation.isEmpty()
                 && jobTitle != null && !jobTitle.isEmpty() && skillSets != null && !skillSets.isEmpty() && payScale != null && !payScale.isEmpty()
+                &&  hrName != null && !hrName.isEmpty() &&  hrPhone != null && !hrPhone.isEmpty() &&  hrEmail != null && !hrEmail.isEmpty()
         );
     }
 
