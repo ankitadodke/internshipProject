@@ -1,13 +1,15 @@
 package com.findmyjob.android.modules.employee;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -18,8 +20,10 @@ import android.widget.Toast;
 
 import com.findmyjob.android.R;
 import com.findmyjob.android.model.customObjects.JobModel;
+import com.findmyjob.android.modules.profile.AddResume;
+import com.findmyjob.android.modules.profile.InterviewTips;
+import com.findmyjob.android.modules.profile.ProfileActivity;
 import com.findmyjob.android.utils.DeviceUtils;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +37,8 @@ import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,6 +50,7 @@ public class ViewJobsActivity extends AppCompatActivity {
     ArrayList<JobModel> jobsList = new ArrayList<>();
     FirebaseFirestore fstore;
     private FirebaseAuth mAuth;
+    DrawerLayout drawerLayout;
     DatabaseReference dbRefJobs = FirebaseDatabase.getInstance().getReference("jobs");
 
     public static Intent getStartIntent(Context context) {
@@ -57,11 +64,9 @@ public class ViewJobsActivity extends AppCompatActivity {
         context = this;
         txtError = findViewById(R.id.txtError);
         fstore = FirebaseFirestore.getInstance();
-        BottomNavigationView bottomNav = findViewById(R.id.curved_navigation);
-        bottomNav.setSelectedItemId(R.id.home);
-        bottomNav.setOnNavigationItemSelectedListener(nvListener);
         mAuth = FirebaseAuth.getInstance();
         context = this;
+        drawerLayout = findViewById(R.id.drawerLayout);
 
         progressLoading = findViewById(R.id.progressLoading);
 
@@ -111,31 +116,87 @@ public class ViewJobsActivity extends AppCompatActivity {
         });
     }
 
+    public void ClickMenu(View view) {
+        openDrawer(drawerLayout);
+    }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener nvListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    switch (item.getItemId()) {
-                        case R.id.home:
-                            return true;
-                        case R.id.my_account:
-                            startActivity(new Intent(getApplicationContext(), MyAccount.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        case R.id.settings:
-                            startActivity(new Intent(getApplicationContext(), Settings.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        case R.id.applications:
-                            startActivity(new Intent(getApplicationContext(), MyCalls.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                    }
+    private static void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
 
-                    return false;
-                }
+    public void ClickLogo(View view) {
+        closeDrawer(drawerLayout);
+    }
 
-            };
+    private static void closeDrawer(DrawerLayout drawerLayout) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickHome(View view) {
+        recreate();
+    }
+
+    public void ClickDashboard(View view) {
+        redirectActivity(this, MyAccount.class);
+    }
+
+    public void ClickMyCalls(View view) {
+        redirectActivity(this, MyCalls.class);
+    }
+
+    public void ClickProfile(View view) {
+        redirectActivity(this, ProfileActivity.class);
+    }
+
+    public void ClickResume(View view) {
+        redirectActivity(this, AddResume.class);
+    }
+
+    public void ClickInterviewTips(View view) {
+        redirectActivity(this, InterviewTips.class);
+    }
+
+    public void ClickLogout(View view) {
+        logout(this);
+    }
+
+    public static void logout(final Activity activity) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("Logout");
+        builder.setMessage("Are Your sure you want to logout?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                activity.finishAffinity();
+                System.exit(0);
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
+    }
+
+    private static void redirectActivity(Activity activity, Class aclass) {
+
+        Intent intent = new Intent(activity, aclass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ViewJobsActivity.closeDrawer(drawerLayout);
+    }
 }
 
 
@@ -159,9 +220,6 @@ class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHolder> {
         holder.txtDesignation.setText(jobsList.get(position).jobTitle);
         holder.txtSalary.setText(jobsList.get(position).payScale);
         holder.txtJobLocation.setText(jobsList.get(position).jobLocation);
-        holder.txtHrName.setText(jobsList.get(position).hrName);
-        holder.txtHrContact.setText(jobsList.get(position).hrContact);
-        holder.txtHrEmail.setText(jobsList.get(position).hrEmail);
 
     }
 
@@ -179,13 +237,9 @@ class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHolder> {
             txtDesignation = itemView.findViewById(R.id.txtJobTitle);
             txtSalary = itemView.findViewById(R.id.txtSalary);
             txtJobLocation = itemView.findViewById(R.id.eTxtJobLocation);
-            txtHrName = itemView.findViewById(R.id.etxtHrName);
-            txtHrContact = itemView.findViewById(R.id.etxtMobileNo);
-            txtHrEmail = itemView.findViewById(R.id.etxtmail);
 
 
         }
     }
-    
 
 }

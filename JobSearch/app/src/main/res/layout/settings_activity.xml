@@ -38,23 +38,23 @@
     </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <TextView
-        android:id="@+id/privacy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        android:padding="8dp"
-        android:text="@string/privacy"
-        android:layout_below="@+id/layout"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="16dp"
+    android:id="@+id/privacy"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="16dp"
+    android:padding="8dp"
+    android:text="@string/privacy"
+    android:layout_below="@+id/layout"
+    android:textSize="15sp"
+    android:textColor="@color/black"
+    android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+    android:drawableStart="@drawable/ic_baseline_lock_24"
+    android:drawablePadding="16dp"
 
-        />
+    />
     <TextView
         android:id="@+id/security"
         android:layout_width="match_parent"

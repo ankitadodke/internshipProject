@@ -130,4 +130,17 @@
     <string name="hr_name">HR name</string>
     <string name="apply_now">Apply Now</string>
     <string name="call_now">Call Now</string>
+    <string name="my_calls">My Calls</string>
+    <string name="_4_0">4.0</string>
+    <string name="know_more">Know More</string>
+    <string name="view_jobseekers_here">View JobSeekers Here</string>
+    <string name="view_posted_jobs">View Posted jobs</string>
+    <string name="view_applications">View Applications</string>
+    <string name="company_profile">Company Profile</string>
+    <string name="change_company_logo">Change company logo</string>
+    <string name="compnany_description">Compnany Description</string>
+    <string name="number_of_employees">Number Of Employees</string>
+    <string name="industry_type">Industry Type</string>
+    <string name="perks_and_benifit">Perks and Benifit</string>
+    <string name="minimum_qualification">Minimum Qualification</string>
 </resources>

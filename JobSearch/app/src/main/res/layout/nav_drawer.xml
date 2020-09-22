@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="60dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/general_section_top_margin"
+            android:onClick="ClickLogo"
+            android:src="@drawable/profile_"
+
+            />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="5"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:gravity="end"
+            android:text="@string/_91_1234567890"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="5"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:text="@string/abc_gmail_com"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            style="@style/TextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_baseline_star_24"
+            android:padding="8dp"
+            android:text="@string/_4_0"
+            android:textColor="@color/white" />
+
+        <TextView
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/ic__next_24"
+            android:gravity="end"
+            android:padding="8dp"
+            android:text="@string/know_more"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dashboard"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_work_outline_24"
+                android:onClick="ClickHome"
+                android:text="@string/job" />
+
+            <TextView
+                android:id="@+id/applications"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_applications"
+                android:onClick="ClickDashboard"
+                android:text="@string/applied" />
+
+            <TextView
+                android:id="@+id/myCalls"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_local_phone_24"
+                android:onClick="ClickMyCalls"
+                android:text="@string/my_calls" />
+
+            <TextView
+                android:id="@+id/profile"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickProfile"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:text="@string/profile" />
+
+            <TextView
+                android:id="@+id/text2"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_applications"
+                android:onClick="ClickResume"
+                android:text="@string/resume" />
+
+            <TextView
+                android:id="@+id/preferences"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_subject_24"
+                android:text="@string/preferences" />
+
+            <TextView
+                android:id="@+id/interviewTips"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickInterviewTips"
+                android:drawableStart="@drawable/ic_baseline_emoji_objects_24"
+                android:text="@string/interview_tips" />
+
+            <TextView
+                android:id="@+id/privacy"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:text="@string/privacy" />
+
+            <TextView
+                android:id="@+id/security"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_security_24"
+                android:text="@string/security" />
+
+            <TextView
+                android:id="@+id/help"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_help_24"
+                android:text="@string/help_support" />
+
+            <TextView
+                android:id="@+id/txtLogout"
+                style="@style/DrawerItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_exit_to_app_24"
+                android:onClick="ClickLogout"
+                android:text="@string/logout" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="15dp"
+    android:layout_marginBottom="4dp"
     android:background="@color/white"
     android:baselineAligned="false"
     android:orientation="vertical">
@@ -23,21 +23,21 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtCompanyName"
+                android:id="@+id/txtJobTitle"
                 style="@style/TextMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/general_top_margin"
-                tools:text="ABC company" />
+                tools:text="Project Manager" />
 
             <TextView
-                android:id="@+id/eTxtJobLocation"
+                android:id="@+id/txtCompanyName"
                 style="@style/TextSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:drawableStart="@drawable/ic_baseline_work_outline_24"
                 android:drawablePadding="16dp"
-                tools:text="@string/location" />
+                tools:text="ABC Company" />
 
         </LinearLayout>
 
@@ -63,16 +63,16 @@
         android:weightSum="10">
 
         <TextView
-            android:id="@+id/txtJobTitle"
+            android:id="@+id/eTxtJobLocation"
             style="@style/TextSmall"
             android:layout_width="0dp"
             android:layout_weight="5"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:drawableStart="@drawable/ic_baseline_work_outline_24"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
             android:drawablePadding="16dp"
             android:layout_marginStart="10dp"
-            tools:text="Project Manager" />
+            tools:text="Job Location" />
 
         <TextView
             android:id="@+id/txtSalary"
@@ -85,91 +85,15 @@
             android:drawablePadding="16dp"
             tools:text="60,000/-" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/general_top_margin"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtContact"
-            style="@style/TextMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/general_top_margin"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/colorPrimary"
-            android:text="@string/contact_details" />
-        <TextView
-            android:id="@+id/etxtHrName"
-            style="@style/TextSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:drawableStart="@drawable/ic_baseline_person_outline_24"
-            android:drawablePadding="16dp"
-            android:textColor="@color/black"
-            tools:text="@string/hr_name"
-            />
-
-            <TextView
-                android:id="@+id/etxtmail"
-                style="@style/TextSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:drawableStart="@drawable/ic_baseline_email_24"
-                android:drawablePadding="16dp"
-                tools:text="@string/email_address" />
-
-            <TextView
-                android:id="@+id/etxtMobileNo"
-                style="@style/TextSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:drawableStart="@drawable/ic_baseline_local_phone_24"
-                android:drawablePadding="16dp"
-                tools:text="@string/phone_number" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:weightSum="10">
-
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/general_top_margin"
-                android:layout_marginEnd="5dp"
-                android:layout_weight="5"
-                android:background="@drawable/primary_btn_bg"
-                android:drawableStart="@drawable/ic_baseline_local_phone_24"
-                android:drawableTint="@color/white"
-                android:padding="@dimen/general_top_margin"
-                android:text="@string/call_now"
-                android:textColor="@color/white"
-                tools:ignore="ButtonStyle,UnusedAttribute" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="@dimen/general_top_margin"
-                android:layout_weight="5"
-                android:background="@drawable/primary_btn_bg"
-                android:drawableStart="@drawable/ic_applications"
-                android:drawableTint="@color/white"
-                android:padding="@dimen/general_top_margin"
-                android:text="@string/apply_now"
-                android:textColor="@color/white"
-                tools:ignore="ButtonStyle,UnusedAttribute" />
-        </LinearLayout>
-
-    </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="@string/apply_now"
+    android:textColor="@color/colorPrimary"
+    style="@style/TextSmall"
+    android:padding="8dp"
+    android:background="@color/lightGray"
+    android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+    android:gravity="center"/>
 </LinearLayout>

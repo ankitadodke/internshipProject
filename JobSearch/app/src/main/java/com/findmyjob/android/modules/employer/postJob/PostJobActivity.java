@@ -40,12 +40,11 @@ import androidx.appcompat.widget.Toolbar;
 public class PostJobActivity extends AppCompatActivity {
 
     private Context context;
-    ImageView img1, img2;
     StorageReference storageReference;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
     ProgressDialog progressDialog;
-    TextInputEditText eTxtCompanyName, eTxtCompanyLocation, eTxtJobLocation, eTxtJobTitle, eTxtSkillsRequired, eTxtPayScale,eTxtHrName,eTxtHrContact,eTxtEmail;
+    TextInputEditText  eTxtJobLocation, eTxtJobTitle, eTxtSkillsRequired, eTxtPayScale,eTxtHrName,eTxtHrContact,eTxtEmail;
     Button btnSubmit;
     String companyName, location, jobLocation, jobTitle, skillSets, payScale, hrName,hrEmail,hrPhone;
     DatabaseReference dbRefJobs = FirebaseDatabase.getInstance().getReference("jobs");
@@ -59,13 +58,9 @@ public class PostJobActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_job_activity);
         context = this;
-        img1 = findViewById(R.id.img1);
-        img2 = findViewById(R.id.img2);
         fAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         fStore = FirebaseFirestore.getInstance();
-        eTxtCompanyName = findViewById(R.id.eTxtCompanyName);
-        eTxtCompanyLocation = findViewById(R.id.eTxtCompanyLocation);
         eTxtJobLocation = findViewById(R.id.eTxtJobLocation);
         eTxtJobTitle = findViewById(R.id.eTxtJobTitle);
         eTxtSkillsRequired = findViewById(R.id.eTxtSkillsRequired);
@@ -75,42 +70,10 @@ public class PostJobActivity extends AppCompatActivity {
         eTxtHrContact= findViewById(R.id.etxtMobileNo);
         eTxtEmail=findViewById(R.id.etxtmail);
 
-        StorageReference profileRef = storageReference.child("jobs/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "logo.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(img1);
-            }
-        });
-
-
-        img2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent openStorage = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openStorage, 1000);
-            }
-
-        });
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        eTxtCompanyName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
-                companyName = str.toString().trim();
-                validate();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
         eTxtHrName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -119,23 +82,6 @@ public class PostJobActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence str, int i, int i1, int i2) {
                 hrName = str.toString().trim();
-                validate();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
-
-
-        eTxtCompanyLocation.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence str, int i, int i1, int i2) {
-                location = str.toString().trim();
                 validate();
             }
 
@@ -262,8 +208,6 @@ public class PostJobActivity extends AppCompatActivity {
                 if (DeviceUtils.isOnline(context)) {
                     String key = dbRefJobs.push().getKey();
                     if (key != null) {
-                        dbRefJobs.child(key).child("companyName").setValue(companyName);
-                        dbRefJobs.child(key).child("companyAddress").setValue(location);
                         dbRefJobs.child(key).child("jobLocation").setValue(jobLocation);
                         dbRefJobs.child(key).child("jobTitle").setValue(jobTitle);
                         dbRefJobs.child(key).child("skills").setValue(skillSets);
@@ -281,7 +225,7 @@ public class PostJobActivity extends AppCompatActivity {
     }
 
     private void validate() {
-        btnSubmit.setEnabled(companyName != null && !companyName.isEmpty() && location != null && !location.isEmpty() && jobLocation != null && !jobLocation.isEmpty()
+        btnSubmit.setEnabled( jobLocation != null && !jobLocation.isEmpty()
                 && jobTitle != null && !jobTitle.isEmpty() && skillSets != null && !skillSets.isEmpty() && payScale != null && !payScale.isEmpty()
                 &&  hrName != null && !hrName.isEmpty() &&  hrPhone != null && !hrPhone.isEmpty() &&  hrEmail != null && !hrEmail.isEmpty()
         );
@@ -293,59 +237,4 @@ public class PostJobActivity extends AppCompatActivity {
             onBackPressed();
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            if (resultCode == Activity.RESULT_OK) {
-                assert data != null;
-                Uri imgUri = data.getData();
-                img1.setImageURI(imgUri);
-                UploadImg(imgUri);
-            }
-        }
-
-    }
-
-    private void UploadImg(Uri imgUri) {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.setCancelable(true);
-        progressDialog.setTitle("Please wait...");
-        progressDialog.setMessage("Uploading your logo of your company");
-        progressDialog.setProgress(0);
-        progressDialog.show();
-        final StorageReference fileRef = storageReference.child("jobs/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "logo.jpg");
-        fileRef.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(img1);
-                    }
-                });
-
-                Toast.makeText(context, "Image Uploaded..", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(context, "Image Uploading failed..", Toast.LENGTH_SHORT).show();
-
-            }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
-                progressDialog.show();
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                progressDialog.dismiss();
-            }
-        });
-    }
-
-
 }

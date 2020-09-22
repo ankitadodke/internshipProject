@@ -3,17 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:weightSum="50"
     tools:context=".modules.profile.AddResume">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="35"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:id="@+id/layout"
+        tools:context=".modules.employer.DashboardEmployer">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="?android:attr/actionBarSize"
+                app:contentInsetStart="0dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/resume"
+                        style="@style/TextLarge"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="start"
+                        android:fontFamily="@font/open_sans_bold"/>
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +51,8 @@
             android:gravity="center"
             android:text="@string/upload_your_resume_here"
             android:textColor="@color/colorPrimary"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginTop="@dimen/general_section_top_margin"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -61,13 +92,7 @@
             android:layout_width="match_parent"
             android:visibility="gone"
             android:layout_height="wrap_content" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="25"
-        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -89,7 +114,5 @@
             android:drawablePadding="8dp"
             android:gravity="center"
             android:text="@string/view_your_resume"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
+            android:textColor="@color/black"/>
 </LinearLayout>
