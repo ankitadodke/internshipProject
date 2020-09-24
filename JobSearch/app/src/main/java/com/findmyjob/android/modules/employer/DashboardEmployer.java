@@ -38,7 +38,7 @@ public class DashboardEmployer extends AppCompatActivity {
         });
     }
 
-    public void ClickMenu(View view) {
+    public void ClickMenuEmp(View view) {
         openDrawer(drawerLayout);
     }
 
@@ -46,7 +46,7 @@ public class DashboardEmployer extends AppCompatActivity {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-    public void ClickLogo(View view) {
+    public void ClickLogoEmp(View view) {
         closeDrawer(drawerLayout);
     }
 
@@ -56,24 +56,34 @@ public class DashboardEmployer extends AppCompatActivity {
         }
     }
 
-    public void ClickHome(View view) {
+    public void ClickHomeEmp(View view) {
         recreate();
     }
 
-    public void ClickProfile(View view){
-        redirectActivity(this,CompanyProfile.class);
+    public void ClickProfileEmp(View view) {
+        redirectActivity(this, CompanyProfile.class);
     }
 
+    public void ClickMyCallsEmp(View view) {
+        redirectActivity(this, EmployerCallDetails.class);
+    }
 
+    public void ClickViewApplicationEmp(View view) {
+        redirectActivity(this, ViewJobApplicationsEMP.class);
+    }
 
-    public void ClickLogout(View view) {
+    public void ClickPrivacyEmp(View view) {
+        redirectActivity(this, PrivacyEmployer.class);
+    }
+
+    public void ClickLogoutEmp(View view) {
         logout(this);
     }
 
     public static void logout(final Activity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle("Logout");
-        builder.setMessage("Are Your sure you want to logout?");
+        builder.setMessage("Are You sure you want to logout?");
 
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override

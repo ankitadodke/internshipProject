@@ -15,12 +15,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".modules.employer.EmployerCallDetails"/>
+        <activity android:name=".modules.employee.ViewJobDetails" />
+        <activity android:name=".modules.employer.ViewJobApplicationsEMP" />
+        <activity android:name=".modules.employer.PrivacyEmployer" />
+        <activity android:name=".modules.employee.PrivacyActivity" />
+
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
             android:value="false" />
         <meta-data
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
+
         <activity android:name=".modules.employee.MyCalls" />
         <activity android:name=".modules.employee.MyAccount" />
         <activity
@@ -36,7 +43,7 @@
         <activity android:name=".modules.profile.ViewPdf" />
         <activity android:name=".modules.profile.AddResume" />
         <activity android:name=".modules.employer.CompanyProfile" />
-        <activity android:name=".modules.employer.DashboardEmployer" />
+        <activity android:name=".modules.employer.DashboardEmployer"/>
         <activity
             android:name=".modules.login.OTPActivity"
             android:screenOrientation="portrait" />
@@ -57,14 +64,12 @@
             android:name=".modules.login.RegisterActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".modules.launcher.SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
+        <activity android:name=".modules.launcher.SplashScreen" ><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
     </application>
 
 </manifest>

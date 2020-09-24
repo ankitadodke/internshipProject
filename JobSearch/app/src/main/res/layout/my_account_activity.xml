@@ -43,60 +43,13 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    <TextView
-        android:id="@+id/profile"
+    <Button
+        style="@style/TextLarge"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        android:padding="8dp"
-        android:text="@string/profile"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawablePadding="16dp"
-
-        />
-
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:padding="8dp"
-        android:text="@string/resume"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:drawableStart="@drawable/ic_applications"
-        android:drawablePadding="16dp"
-        />
-
-    <TextView
-        android:id="@+id/preferences"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/preferences"
-        android:textColor="@color/black"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:drawableStart="@drawable/ic_baseline_subject_24"
-        style="@style/DrawerItems"
-        />
-    <TextView
-        android:id="@+id/interviewTips"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/interview_tips"
-        android:textColor="@color/black"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:drawableStart="@drawable/ic_baseline_emoji_objects_24"
-        style="@style/DrawerItems"
-        />
+        android:layout_height="150dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/primary_btn_bg"
+        android:text="@string/total_applications_0"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/general_section_top_margin"
-            android:onClick="ClickLogo"
+            android:onClick="ClickLogoEmp"
             android:src="@drawable/app_icon"
 
             />
@@ -24,31 +24,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="10">
-
-        <TextView
-            android:id="@+id/phoneNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="5"
-            android:fontFamily="@font/open_sans_semi_bold"
-            android:gravity="end"
-            android:text="@string/_91_1234567890"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp" />
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/email"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
-            android:layout_weight="5"
             android:fontFamily="@font/open_sans_semi_bold"
-            android:text="@string/abc_gmail_com"
+            android:text="@string/user_name"
+            android:gravity="center"
             android:textColor="@color/colorPrimary"
             android:textSize="15sp" />
     </LinearLayout>
@@ -95,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_work_outline_24"
-                android:onClick="ClickHome"
+                android:onClick="ClickHomeEmp"
                 android:text="@string/view_posted_jobs" />
 
             <TextView
@@ -104,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_applications"
-                android:onClick="ClickDashboard"
+                android:onClick="ClickViewApplicationEmp"
                 android:text="@string/view_applications" />
 
             <TextView
@@ -113,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_local_phone_24"
-                android:onClick="ClickMyCalls"
+                android:onClick="ClickMyCallsEmp"
                 android:text="@string/my_calls" />
 
             <TextView
@@ -121,10 +107,9 @@
                 style="@style/DrawerItems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="ClickProfile"
                 android:drawableStart="@drawable/ic_baseline_person_24"
+                android:onClick="ClickProfileEmp"
                 android:text="@string/company_profile" />
-
 
 
             <TextView
@@ -133,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:onClick="ClickPrivacyEmp"
                 android:text="@string/privacy" />
 
             <TextView
@@ -157,7 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_exit_to_app_24"
-                android:onClick="ClickLogout"
+                android:onClick="ClickLogoutEmp"
                 android:text="@string/logout" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

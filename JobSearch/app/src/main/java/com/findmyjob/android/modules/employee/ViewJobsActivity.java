@@ -67,7 +67,6 @@ public class ViewJobsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         context = this;
         drawerLayout = findViewById(R.id.drawerLayout);
-
         progressLoading = findViewById(R.id.progressLoading);
 
         final RecyclerView recJobsList = findViewById(R.id.recJobsList);
@@ -150,8 +149,16 @@ public class ViewJobsActivity extends AppCompatActivity {
         redirectActivity(this, ProfileActivity.class);
     }
 
+    public void ClickViewJobs(View view) {
+        redirectActivity(this, ViewJobDetails.class);
+    }
+
     public void ClickResume(View view) {
         redirectActivity(this, AddResume.class);
+    }
+
+    public void ClickPrivacy(View view) {
+        redirectActivity(this, PrivacyActivity.class);
     }
 
     public void ClickInterviewTips(View view) {
@@ -221,6 +228,7 @@ class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHolder> {
         holder.txtSalary.setText(jobsList.get(position).payScale);
         holder.txtJobLocation.setText(jobsList.get(position).jobLocation);
 
+
     }
 
     @Override
@@ -238,8 +246,6 @@ class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHolder> {
             txtSalary = itemView.findViewById(R.id.txtSalary);
             txtJobLocation = itemView.findViewById(R.id.eTxtJobLocation);
 
-
         }
     }
-
 }

@@ -6,191 +6,202 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".modules.employer.CompanyProfile">
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layout"
         tools:context=".modules.employer.DashboardEmployer">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            >
+            android:background="@color/white">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="?android:attr/actionBarSize"
-                app:contentInsetStart="0dp"
-                >
+                app:contentInsetStart="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
+                        style="@style/TextLarge"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/dashboard_post_new_job"
-                        style="@style/TextLarge"
-                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/open_sans_bold"
                         android:gravity="start"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:text="@string/company_profile"
+                        android:textColor="@color/colorPrimary" />
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/general_section_top_margin"
-        android:orientation="vertical"
-        android:padding="@dimen/general_activity_padding">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarid"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/lightWhite"
-        android:gravity="center"
-        app:elevation="0dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            style="@style/TextLarge"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_company_logo"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="@dimen/general_section_top_margin"
+            android:orientation="vertical"
+            android:padding="@dimen/general_activity_padding">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="@dimen/general_top_margin"
-            app:cardCornerRadius="50dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img1"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:background="@color/white"
-                android:contentDescription="@string/profile"
-                android:padding="3dp"
-                android:src="@drawable/app_icon" />
-        </androidx.cardview.widget.CardView>
-
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_weight="3"
-            android:contentDescription="@string/profile"
-            android:src="@drawable/ic_baseline_photo_camera_24" />
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <TextView
-        style="@style/TextLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/post_job_company_profile"
-        android:textColor="@color/colorPrimary" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/AppTheme.TIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/post_job_company_name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/eTxtCompanyName"
-            style="@style/AppTheme.GeneralEditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords|text"
-            android:maxLength="60" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/AppTheme.TIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/post_job_company_address">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/eTxtCompanyLocation"
-            style="@style/AppTheme.GeneralEditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:maxLength="200" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/compnany_description">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etxtCompnyDesc"
-                style="@style/AppTheme.GeneralEditTextStyle"
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="200" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/number_of_employees">
+                android:background="@color/lightWhite"
+                android:gravity="center"
+                app:elevation="0dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etxtNoOfEmp"
-                style="@style/AppTheme.GeneralEditTextStyle"
+                <TextView
+                    style="@style/TextLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_company_logo"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="@dimen/general_top_margin"
+                    app:cardCornerRadius="50dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img1"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@color/white"
+                        android:contentDescription="@string/profile"
+                        android:padding="3dp"
+                        android:src="@drawable/app_icon" />
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_weight="3"
+                    android:contentDescription="@string/profile"
+                    android:src="@drawable/ic_baseline_photo_camera_24" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TextView
+                style="@style/TextLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="6" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="@string/post_job_company_profile"
+                android:textColor="@color/colorPrimary" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/industry_type">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etstCompanyType"
-                style="@style/AppTheme.GeneralEditTextStyle"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTheme.TIL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="50" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/post_job_company_name">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/AppTheme.TIL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/perks_and_benifit">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/eTxtCompanyName"
+                    style="@style/AppTheme.GeneralEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords|text"
+                    android:maxLength="60" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etxtPerks"
-                style="@style/AppTheme.GeneralEditTextStyle"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTheme.TIL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="200" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+                android:hint="@string/post_job_company_address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/eTxtCompanyLocation"
+                    style="@style/AppTheme.GeneralEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:maxLength="200" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTheme.TIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/compnany_description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etxtCompnyDesc"
+                    style="@style/AppTheme.GeneralEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="200" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTheme.TIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/number_of_employees">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etxtNoOfEmp"
+                    style="@style/AppTheme.GeneralEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="6" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTheme.TIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/industry_type">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etstCompanyType"
+                    style="@style/AppTheme.GeneralEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTheme.TIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/perks_and_benifit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etxtPerks"
+                    style="@style/AppTheme.GeneralEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="200" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/btnPostJob"
+                style="@style/GeneralSubmitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_section_top_margin"
+                android:enabled="false"
+                android:text="@string/submit" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
