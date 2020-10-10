@@ -43,9 +43,10 @@
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/general_top_margin">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -194,14 +195,15 @@
                     android:maxLength="200" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
-                android:id="@+id/btnPostJob"
+                android:id="@+id/saveCompanyProfile"
                 style="@style/GeneralSubmitButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/general_section_top_margin"
-                android:enabled="false"
+                android:layout_marginBottom="@dimen/general_section_top_margin"
                 android:text="@string/submit" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 </LinearLayout>

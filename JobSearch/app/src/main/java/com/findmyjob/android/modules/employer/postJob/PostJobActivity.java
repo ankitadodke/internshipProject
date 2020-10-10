@@ -1,53 +1,51 @@
 package com.findmyjob.android.modules.employer.postJob;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.findmyjob.android.R;
+import com.findmyjob.android.model.customObjects.CompanyDetailsModel;
+import com.findmyjob.android.model.customObjects.JobDetailsModel;
+import com.findmyjob.android.model.customObjects.JobPostModel;
 import com.findmyjob.android.utils.DeviceUtils;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+public class PostJobActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-public class PostJobActivity extends AppCompatActivity {
-
-    private Context context;
     StorageReference storageReference;
-    FirebaseFirestore fStore;
-    FirebaseAuth fAuth;
-    ProgressDialog progressDialog;
-    TextInputEditText  eTxtJobLocation, eTxtJobTitle, eTxtSkillsRequired, eTxtPayScale,eTxtHrName,eTxtHrContact,eTxtEmail;
+    CompanyDetailsModel companyDetails;
+    TextInputEditText eTxtJobLocation, eTxtJobTitle, eTxtSkillsRequired, eTxtPayScale,
+            eTxtJobInfo, eTxtJobQualification, eTxtEnglish, eTxtExp, eTxtJobTiming,
+            eTxtHrName, eTxtHrContact, eTxtEmail;
     Button btnSubmit;
-    String companyName, location, jobLocation, jobTitle, skillSets, payScale, hrName,hrEmail,hrPhone;
+    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    FirebaseAuth firebaseAuth;
+    String jobLocation, jobTitle, skillSets, payScale, hrName, hrEmail, hrPhone, jobInfo, engReq, Exp, jobTime, qualification;
     DatabaseReference dbRefJobs = FirebaseDatabase.getInstance().getReference("jobs");
+    private Context context;
+
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, PostJobActivity.class);
@@ -58,17 +56,22 @@ public class PostJobActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_job_activity);
         context = this;
-        fAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        fStore = FirebaseFirestore.getInstance();
         eTxtJobLocation = findViewById(R.id.eTxtJobLocation);
         eTxtJobTitle = findViewById(R.id.eTxtJobTitle);
         eTxtSkillsRequired = findViewById(R.id.eTxtSkillsRequired);
         eTxtPayScale = findViewById(R.id.eTxtPayScale);
         btnSubmit = findViewById(R.id.btnPostJob);
-        eTxtHrName= findViewById(R.id.HRName);
-        eTxtHrContact= findViewById(R.id.etxtMobileNo);
-        eTxtEmail=findViewById(R.id.etxtmail);
+        eTxtHrName = findViewById(R.id.HRName);
+        eTxtJobInfo = findViewById(R.id.eTxtJobInfo);
+        eTxtJobQualification = findViewById(R.id.eTxtQualification);
+        eTxtEnglish = findViewById(R.id.eTxtEnglish);
+        eTxtExp = findViewById(R.id.eTxtExp);
+        eTxtJobTiming = findViewById(R.id.eTxtJobTime);
+        eTxtHrContact = findViewById(R.id.etxtMobileNo);
+        eTxtEmail = findViewById(R.id.etxtmail);
+        firebaseAuth = FirebaseAuth.getInstance();
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -170,6 +173,7 @@ public class PostJobActivity extends AppCompatActivity {
             }
         });
 
+
         eTxtPayScale.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -202,20 +206,24 @@ public class PostJobActivity extends AppCompatActivity {
             }
         });
 
+        fStore.collection("companyDetails").document(Objects.requireNonNull(this.firebaseAuth.getCurrentUser()).getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snap) {
+                if (snap.exists())
+                    companyDetails = snap.toObject(CompanyDetailsModel.class);
+            }
+        });
+
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (DeviceUtils.isOnline(context)) {
-                    String key = dbRefJobs.push().getKey();
-                    if (key != null) {
-                        dbRefJobs.child(key).child("jobLocation").setValue(jobLocation);
-                        dbRefJobs.child(key).child("jobTitle").setValue(jobTitle);
-                        dbRefJobs.child(key).child("skills").setValue(skillSets);
-                        dbRefJobs.child(key).child("payScale").setValue(payScale + "/month");
-                        dbRefJobs.child(key).child("hrName").setValue(hrName);
-                        dbRefJobs.child(key).child("hrContact").setValue(hrPhone);
-                        dbRefJobs.child(key).child("hrEmail").setValue(hrEmail);
-                    }
+                if (DeviceUtils.isOnline(context) && companyDetails != null) {
+                    String key = fStore.collection("jobs").document().getId();
+                    fStore.collection("jobs").document(key).set(new JobPostModel(
+                            new JobDetailsModel(jobLocation, jobTitle, skillSets, payScale, qualification, jobTime, Exp,
+                                    hrName, jobInfo, hrPhone, hrEmail, engReq),
+                            companyDetails, firebaseAuth.getCurrentUser().getUid(), key));
                     Toast.makeText(context, "Job requirement posted successfully", Toast.LENGTH_SHORT).show();
                     finish();
                 } else
@@ -225,9 +233,9 @@ public class PostJobActivity extends AppCompatActivity {
     }
 
     private void validate() {
-        btnSubmit.setEnabled( jobLocation != null && !jobLocation.isEmpty()
+        btnSubmit.setEnabled(jobLocation != null && !jobLocation.isEmpty()
                 && jobTitle != null && !jobTitle.isEmpty() && skillSets != null && !skillSets.isEmpty() && payScale != null && !payScale.isEmpty()
-                &&  hrName != null && !hrName.isEmpty() &&  hrPhone != null && !hrPhone.isEmpty() &&  hrEmail != null && !hrEmail.isEmpty()
+                && hrName != null && !hrName.isEmpty() && hrPhone != null && !hrPhone.isEmpty() && hrEmail != null && !hrEmail.isEmpty()
         );
     }
 
@@ -236,5 +244,15 @@ public class PostJobActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home)
             onBackPressed();
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

@@ -186,6 +186,4 @@ public class OTPActivity extends AppCompatActivity {
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     };
-
-
 }

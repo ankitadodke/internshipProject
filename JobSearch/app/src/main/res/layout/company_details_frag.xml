@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/general_section_top_margin"
+        android:contentDescription="@null"
+        android:src="@drawable/app_icon" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightWhite"
+        android:padding="@dimen/general_activity_padding">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/refCompanyName"
+                style="@style/TextSmall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                android:padding="@dimen/small_margin"
+                android:text="@string/post_job_company_name"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtCompanyName"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_toEndOf="@+id/refCompanyName"
+                android:padding="@dimen/small_margin"
+                tools:text="Software company" />
+
+            <TextView
+                android:id="@+id/refCompanyLocation"
+                style="@style/TextSmall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refCompanyName"
+                android:layout_margin="@dimen/small_margin"
+                android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                android:padding="@dimen/small_margin"
+                android:text="@string/post_job_company_address"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtCompanyLocation"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtCompanyName"
+                android:layout_alignBaseline="@+id/refCompanyLocation"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_toEndOf="@+id/refCompanyName"
+                android:padding="@dimen/small_margin"
+                tools:text="Pune" />
+
+            <TextView
+                android:id="@+id/refCompanyType"
+                style="@style/TextSmall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refCompanyLocation"
+                android:layout_margin="@dimen/small_margin"
+                android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                android:padding="@dimen/small_margin"
+                android:text="@string/industry_type"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtCompanyType"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/refCompanyType"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_toEndOf="@+id/refCompanyName"
+                android:padding="@dimen/small_margin"
+                tools:text="Software Company" />
+
+            <TextView
+                android:id="@+id/refCompanyEmpNo"
+                style="@style/TextSmall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refCompanyType"
+                android:layout_margin="@dimen/small_margin"
+                android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                android:padding="@dimen/small_margin"
+                android:text="@string/number_of_employees"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtCompanyEmpNo"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/refCompanyEmpNo"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_toEndOf="@+id/refCompanyType"
+                android:padding="@dimen/small_margin"
+                tools:text="20 Employees" />
+
+            <TextView
+                android:id="@+id/refCompanyPerks"
+                style="@style/TextSmall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refCompanyEmpNo"
+                android:layout_margin="@dimen/small_margin"
+                android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                android:padding="@dimen/small_margin"
+                android:text="@string/perks_and_benifit"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtCompanyPerks"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtCompanyEmpNo"
+                android:layout_alignBaseline="@+id/refCompanyPerks"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_toEndOf="@+id/refCompanyPerks"
+                android:padding="@dimen/small_margin"
+                tools:text="Software company" />
+
+            <TextView
+                android:id="@+id/refCompanyInfo"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refCompanyPerks"
+                android:layout_margin="@dimen/small_margin"
+                android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                android:padding="@dimen/small_margin"
+                android:text="@string/compnany_description"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtCompanyInfo"
+                style="@style/TextSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refCompanyInfo"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:padding="@dimen/small_margin"
+                tools:text="Software company" />
+
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+</LinearLayout>

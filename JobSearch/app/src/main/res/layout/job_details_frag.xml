@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/general_section_top_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightWhite"
+            android:padding="@dimen/general_activity_padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/refBasic"
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/general_top_margin"
+                    android:drawableEnd="@drawable/ic_baseline_favorite_border_24"
+                    android:drawablePadding="@dimen/general_activity_padding"
+                    android:gravity="center"
+                    android:text="@string/basic_job_details"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/refJobTitle"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refBasic"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/post_job_title"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtJobTitle"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refBasic"
+                    android:layout_alignBaseline="@+id/refJobTitle"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refJobTitle"
+                    tools:text="Software developer" />
+
+                <TextView
+                    android:id="@+id/refJobLocation"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refJobTitle"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/post_job_location"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtJobLocation"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refJobTitle"
+                    android:layout_alignBaseline="@+id/refJobLocation"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refJobLocation"
+                    tools:text="Pune" />
+
+                <TextView
+                    android:id="@+id/refPayScale"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refJobLocation"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/post_job_pay_scale"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtPayScale"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refJobLocation"
+                    android:layout_alignBaseline="@+id/refPayScale"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refPayScale"
+                    tools:text="5000/month" />
+
+                <TextView
+                    android:id="@+id/refQualification"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refPayScale"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/qualification"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/textQualification"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refPayScale"
+                    android:layout_alignBaseline="@+id/refQualification"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refQualification"
+                    tools:text="graduate" />
+
+                <TextView
+                    android:id="@+id/refEnglish"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refQualification"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/english"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtEnglish"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refQualification"
+                    android:layout_alignBaseline="@+id/refEnglish"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refEnglish"
+                    tools:text="no English" />
+
+                <TextView
+                    android:id="@+id/refskills"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refEnglish"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/post_job_required_skills"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtSkills"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refEnglish"
+                    android:layout_alignBaseline="@+id/refskills"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refEnglish"
+                    tools:text="json" />
+
+                <TextView
+                    android:id="@+id/refJobInfo"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refskills"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/job_information"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtJobInfo"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refskills"
+                    android:layout_alignBaseline="@+id/refJobInfo"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refJobInfo"
+                    tools:text="Software developer" />
+
+                <TextView
+                    android:id="@+id/refExp"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refJobInfo"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/experience"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtJobExp"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refJobInfo"
+                    android:layout_alignBaseline="@+id/refExp"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refExp"
+                    tools:text="Freshers can apply" />
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:background="@color/lightWhite"
+            android:padding="@dimen/general_activity_padding">
+
+            <TextView
+                android:id="@+id/refOtherDetails"
+                style="@style/TextMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/general_top_margin"
+                android:drawablePadding="@dimen/general_activity_padding"
+                android:gravity="center"
+                android:text="@string/other_details"
+                android:textColor="@color/colorPrimary" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/refJobTiming"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/job_timing"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtJobTiming"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/refJobTiming"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refJobTiming"
+                    tools:text="9 hours working" />
+
+                <TextView
+                    android:id="@+id/refWorkingDays"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refJobTiming"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/working_days"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtWorkingDays"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refJobTiming"
+                    android:layout_alignBaseline="@+id/refWorkingDays"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refJobTiming"
+                    tools:text="Monday To Friday" />
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:background="@color/lightWhite"
+            android:padding="@dimen/general_activity_padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/refInterviewDetails"
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/general_top_margin"
+                    android:drawablePadding="@dimen/general_activity_padding"
+                    android:gravity="center"
+                    android:text="@string/interview_details"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <TextView
+                    android:id="@+id/refContactPerson"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/refInterviewDetails"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/contact_person"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/txtContactPerson"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refInterviewDetails"
+                    android:layout_alignBaseline="@+id/refContactPerson"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refContactPerson"
+                    tools:text="Manager" />
+
+                <TextView
+                    android:id="@+id/txtContactPersonEmail"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refContactPerson"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refContactPerson"
+                    tools:text="abc@gmail.com" />
+
+                <TextView
+                    android:id="@+id/txtContactPersonPhone"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtContactPersonEmail"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refContactPerson"
+                    tools:text="8888888888" />
+
+                <TextView
+                    android:id="@+id/refJobOpenings"
+                    style="@style/TextSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtContactPersonPhone"
+                    android:layout_margin="@dimen/small_margin"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+                    android:text="@string/job_openings"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <TextView
+                    android:id="@+id/txtJobOpenings"
+                    style="@style/TextSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/refJobOpenings"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/refJobOpenings"
+                    tools:text="1" />
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/general_top_margin"
+            android:background="@color/lightWhite"
+            android:padding="@dimen/small_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10">
+
+                <Button
+                    android:id="@+id/btnApplyNow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_weight="5"
+                    android:background="@drawable/primary_btn_bg"
+                    android:text="@string/apply_now"
+                    android:textColor="@color/white"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/btnCall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_weight="5"
+                    android:background="@drawable/call_btn"
+                    android:text="@string/call_now"
+                    android:textColor="@color/white"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
+</ScrollView>

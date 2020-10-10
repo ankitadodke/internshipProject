@@ -17,4 +17,5 @@
     <color name="tips_bg2">#9DDCFB</color>
     <color name="colorDisabled">#F5BEBEBE</color>
     <color name="errorRed">#FF0000</color>
+    <color name="green">#1EAE23</color>
 </resources>

@@ -179,4 +179,25 @@ Changes to This Privacy Policy. We may update our Privacy Policy from time to ti
 If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at kumaarkalpa@gmail.com.
 </string>
     <string name="view_job_details_title">View Job Description</string>
+    <string name="english">English</string>
+    <string name="job_information">Job Information</string>
+    <string name="experience">Experience</string>
+    <string name="basic_job_details">Basic Job Details</string>
+    <string name="other_details">Other Details</string>
+    <string name="job_timing">Job Timing</string>
+    <string name="working_days">Working Days</string>
+    <string name="interview_details">Interview Details</string>
+    <string name="interview_location">Interview Location</string>
+    <string name="contact_person">Contact Person</string>
+    <string name="job_openings">Job Openings</string>
+    <string name="interview_information">Interview Information</string>
+    <string name="english_knowledge_requirements">English knowledge requirements</string>
+    <string name="experience_required">Experience required</string>
+    <string name="select_minimum_qualification">select Minimum Qualification</string>
+    <string name="established_year">Established Year</string>
+    <string name="activity_title_posted_jobs">Posted Jobs</string>
+    <string name="dashboard_posted_jobs">Posted Jobs</string>
+    <string name="view_applicants">View Applicants</string>
+    <string name="activity_title_applicants">Applicants</string>
+    <string name="no_applicants">No Applicants Yet</string>
 </resources>

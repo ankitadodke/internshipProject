@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "837703475454",
+    "firebase_url": "https://find-my-job-ab5bd.firebaseio.com",
+    "project_id": "find-my-job-ab5bd",
+    "storage_bucket": "find-my-job-ab5bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837703475454:android:730af374d36188496e05af",
+        "android_client_info": {
+          "package_name": "com.findmyjob.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837703475454-eagc2s6qkmdmeqpt9h9021h4240j1iag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findmyjob.android",
+            "certificate_hash": "c5720b842fadd317dc3862123e0f2ac5d4c4f281"
+          }
+        },
+        {
+          "client_id": "837703475454-5cr02d0ts5l6bnu0a7abqsjs5bkuoq7j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findmyjob.android",
+            "certificate_hash": "0c097094a30134697d46328e48387cd2e6071c1f"
+          }
+        },
+        {
+          "client_id": "837703475454-fgq27amacad6552nc7opudbuttquajd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr-BrnMlKVYu6Gt9H6YvAVfwTtymMY9a4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837703475454-fgq27amacad6552nc7opudbuttquajd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837703475454:android:3a6fd8d34b90a3976e05af",
+        "android_client_info": {
+          "package_name": "com.findmyjob.findmyjobrecruiter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837703475454-9e247voaifnupcc640gtmnarc4t310q6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findmyjob.findmyjobrecruiter",
+            "certificate_hash": "0c097094a30134697d46328e48387cd2e6071c1f"
+          }
+        },
+        {
+          "client_id": "837703475454-fgq27amacad6552nc7opudbuttquajd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr-BrnMlKVYu6Gt9H6YvAVfwTtymMY9a4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837703475454-fgq27amacad6552nc7opudbuttquajd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
