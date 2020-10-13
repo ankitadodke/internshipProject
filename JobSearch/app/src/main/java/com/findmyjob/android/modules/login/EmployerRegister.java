@@ -65,7 +65,7 @@ public class EmployerRegister extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+        if((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employer.toString())){
 
             Intent intent = new Intent(this, DashboardEmployer.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

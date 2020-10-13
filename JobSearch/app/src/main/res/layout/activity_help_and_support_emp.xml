@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".modules.employer.HelpAndSupportEmp">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".modules.employer.DashboardEmployer">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="?android:attr/actionBarSize"
+                    app:contentInsetStart="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/TextLarge"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="start"
+                            android:text="@string/help_support"
+                            android:textColor="@color/colorPrimary" />
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dashboard"
+                    style="@style/DrawerItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickNoApplications"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:text="@string/help_and_spport_emp_first" />
+
+                <TextView
+                    style="@style/DrawerItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickNoJobs"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:text="@string/help_and_spport_emp_second" />
+
+
+                <TextView
+                    android:id="@+id/profile"
+                    style="@style/DrawerItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickCall"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:text="@string/help_and_spport_emp_third" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    style="@style/DrawerItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickConsultancy"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:text="@string/help_and_spport_emp_forth" />
+
+
+                <TextView
+                    android:id="@+id/txtLogout"
+                    style="@style/DrawerItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickCantLogoutEmp"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:text="@string/help_and_support_five" />
+                <TextView
+                    style="@style/DrawerItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickDeleteAccEmp"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:text="@string/help_and_support_six" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>

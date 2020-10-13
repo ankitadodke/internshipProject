@@ -12,9 +12,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.findmyjob.android.R;
 import com.github.barteksc.pdfviewer.PDFView;
@@ -29,7 +32,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.Objects;
 
 public class AddResume extends AppCompatActivity {
-    Button selectFile,btnViewResume;
+    Button selectFile,btnViewResume,btnCreateResume;
     FirebaseDatabase database;
     Uri pdfUri;
     FirebaseAuth fAuth;
@@ -50,6 +53,7 @@ public class AddResume extends AppCompatActivity {
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         selectFile = findViewById(R.id.btnUploadResume);
         btnViewResume = findViewById(R.id.btnViewResume);
+        btnCreateResume = findViewById(R.id.btnCreateResume);
 
         selectFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +80,15 @@ public class AddResume extends AppCompatActivity {
         btnViewResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { startActivity(new Intent(Intent.ACTION_VIEW, pdfUri)); }
+        });
+        btnCreateResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str_txt= "<a href=http://www.resumebuild.com>Google</a>";
+                TextView link = findViewById(R.id.btnCreateResume);
+                link.setMovementMethod(LinkMovementMethod.getInstance());
+                link.setText(Html.fromHtml(str_txt));
+            }
         });
     }
     @Override

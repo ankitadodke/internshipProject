@@ -80,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+        if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employee.toString())){
             Intent intent = new Intent(context, ViewJobsActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);

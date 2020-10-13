@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 
 import com.findmyjob.android.R;
+import com.findmyjob.android.model.constants.SaveSharedPreference;
 import com.findmyjob.android.model.customObjects.UserRoles;
 import com.findmyjob.android.modules.employee.ViewJobsActivity;
 import com.findmyjob.android.modules.employer.DashboardEmployer;
@@ -33,7 +34,7 @@ public class SplashScreen extends AppCompatActivity {
         findViewById(R.id.appTitle).setAnimation(AnimationUtils.loadAnimation(this, R.anim.bottom_animation));
         findViewById(R.id.appSubTitle).setAnimation(AnimationUtils.loadAnimation(this, R.anim.bottom_animation));
 
-        if ((getUserId(context)).length() == 0) {
+        if ((SaveSharedPreference.getUserId(context).length()) == 0) {
             (new Handler()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -42,7 +43,7 @@ public class SplashScreen extends AppCompatActivity {
                 }
             }, 1500);
         } else {
-            if ((getUserType(context)).equalsIgnoreCase(UserRoles.Employer.toString())) {
+            if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employer.toString())) {
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -50,7 +51,7 @@ public class SplashScreen extends AppCompatActivity {
                         finish();
                     }
                 }, 1500);
-            } else if ((getUserType(context)).equalsIgnoreCase(UserRoles.Employee.toString())) {
+            } else if ((SaveSharedPreference.getUserType(context)).equalsIgnoreCase(UserRoles.Employee.toString())) {
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {

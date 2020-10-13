@@ -8,7 +8,7 @@ public class JobDetailsModel implements Serializable {
     JobDetailsModel() {
     }
 
-    public JobDetailsModel(String jobLocation, String jobTitle, String skillSets, String payScale, String qualification, String jobTime, String Exp, String hrName, String jobInfo, String hrContact, String hrEmail, String EngReq) {
+    public JobDetailsModel(String jobLocation,String jobTitle,String skillSets, String payScale,String hrName,String hrContact,String hrEmail,String jobInfo,String EngReq,String Exp,String jobTime,String qualification) {
         this.jobLocation = jobLocation;
         this.jobTitle = jobTitle;
         this.skillSets = skillSets;

@@ -8,14 +8,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -24,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.findmyjob.android.R;
 import com.findmyjob.android.model.customObjects.JobPostModel;
+import com.findmyjob.android.modules.employer.HelpAndSupport;
 import com.findmyjob.android.modules.login.RegisterActivity;
 import com.findmyjob.android.modules.profile.AddDetails;
 import com.findmyjob.android.modules.profile.AddResume;
@@ -38,6 +44,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -48,8 +57,10 @@ public class ViewJobsActivity extends AppCompatActivity {
     ArrayList<JobPostModel> jobsList = new ArrayList<>();
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     DrawerLayout drawerLayout;
+    ImageView img1,companyLogo;
+    StorageReference storageReference;
     private Context context;
-    private TextView txtError;
+    private TextView txtError , userName;
     private FirebaseAuth mAuth;
 
     public static Intent getStartIntent(Context context) {
@@ -90,9 +101,9 @@ public class ViewJobsActivity extends AppCompatActivity {
 
     }
 
-    private static void redirectActivity(Activity activity, Class aclass) {
+    private static void redirectActivity(Activity activity, Class aClass) {
 
-        Intent intent = new Intent(activity, aclass);
+        Intent intent = new Intent(activity, aClass);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
     }
@@ -107,7 +118,16 @@ public class ViewJobsActivity extends AppCompatActivity {
         context = this;
         drawerLayout = findViewById(R.id.drawerLayout);
         progressLoading = findViewById(R.id.progressLoading);
-
+        img1 = findViewById(R.id.userImage);
+        userName= findViewById(R.id.userName);
+        storageReference = FirebaseStorage.getInstance().getReference();
+        StorageReference profileRef = storageReference.child("users/" + Objects.requireNonNull(mAuth.getCurrentUser()).getUid() + "profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(img1);
+            }
+        });
         final RecyclerView recJobsList = findViewById(R.id.recJobsList);
         recJobsList.setLayoutManager(new LinearLayoutManager(context));
         if (!DeviceUtils.isOnline(context)) {
@@ -159,6 +179,8 @@ public class ViewJobsActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
+                else
+                    userName.setText(documentSnapshot.getString("name"));
             }
         });
     }
@@ -179,8 +201,23 @@ public class ViewJobsActivity extends AppCompatActivity {
         redirectActivity(this, MyAccount.class);
     }
 
-    public void ClickMyCalls(View view) {
-        redirectActivity(this, MyCalls.class);
+    public void ClickDetails(View view) {
+        redirectActivity(this, AddDetails.class);
+    }
+
+    public void ClickKnow(View view) {
+        link(this);
+    }
+
+    public void ClickHelpAndSupport(View view) {
+        redirectActivity(this, HelpAndSupport.class);
+    }
+
+    private void link(Activity activity) {
+        String str_txt = "<a href=http://www.kumaarakalpa.com>Google</a>";
+        TextView link = findViewById(R.id.KssplLink);
+        link.setMovementMethod(LinkMovementMethod.getInstance());
+        link.setText(Html.fromHtml(str_txt));
     }
 
     public void ClickProfile(View view) {
@@ -207,5 +244,18 @@ public class ViewJobsActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         ViewJobsActivity.closeDrawer(drawerLayout);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
+                assert data != null;
+                Uri imgUri = data.getData();
+                img1.setImageURI(imgUri);
+            }
+        }
+
     }
 }

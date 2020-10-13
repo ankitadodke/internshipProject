@@ -20,32 +20,27 @@ import androidx.fragment.app.Fragment;
 
 import com.findmyjob.android.R;
 import com.findmyjob.android.model.customObjects.JobDetailsModel;
-import com.findmyjob.android.modules.profile.AddDetails;
-import com.findmyjob.android.modules.profile.PersonalFragment;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class JobDetailsFragment extends Fragment {
     private static final String ARG_JOB_DETAILS = "jobDetails";
     private static final String ARG_ID = "documentId";
 
     private final int REQUEST_CODE_PHONE_CALL = 1000;
-    Button btnCallNow,btnApplyNow;
+    Button btnCallNow, btnApplyNow;
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
-    public static JobDetailsFragment newInstance(JobDetailsModel jobDetails,String id) {
+    public static JobDetailsFragment newInstance(JobDetailsModel jobDetails, String id) {
         JobDetailsFragment fragment = new JobDetailsFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable(ARG_JOB_DETAILS, jobDetails);
-        bundle.putString(ARG_ID,id);
+        bundle.putString(ARG_ID, id);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -68,13 +63,11 @@ public class JobDetailsFragment extends Fragment {
         TextView txtJobInfo = rootView.findViewById(R.id.txtJobInfo);
         TextView txtJobExp = rootView.findViewById(R.id.txtJobExp);
         TextView txtJobTiming = rootView.findViewById(R.id.txtJobTiming);
-        TextView txtJobDays = rootView.findViewById(R.id.eTxtJobWorkingDays);
         TextView txtJobContactPerson = rootView.findViewById(R.id.txtContactPerson);
-        TextView txtJobOpenings = rootView.findViewById(R.id.txtJobOpenings);
         TextView txtJobContactPersonEmail = rootView.findViewById(R.id.txtContactPersonEmail);
         final TextView txtJobContactPersonPhone = rootView.findViewById(R.id.txtContactPersonPhone);
         btnCallNow = rootView.findViewById(R.id.btnCall);
-        btnApplyNow= rootView.findViewById(R.id.btnApplyNow);
+        btnApplyNow = rootView.findViewById(R.id.btnApplyNow);
 
         if (jobDetails != null) {
             txtJobTitle.setText(jobDetails.jobTitle);
@@ -85,6 +78,12 @@ public class JobDetailsFragment extends Fragment {
             txtJobContactPerson.setText(jobDetails.hrName);
             txtJobContactPersonEmail.setText(jobDetails.hrEmail);
             txtJobContactPersonPhone.setText(jobDetails.hrContact);
+            txtJobEnglish.setText(jobDetails.EngReq);
+            txtJobInfo.setText(jobDetails.jobInfo);
+            txtJobTiming.setText(jobDetails.jobTime);
+            txtJobExp.setText(jobDetails.Exp);
+
+
         }
 
         btnApplyNow.setOnClickListener(new View.OnClickListener() {
@@ -92,11 +91,11 @@ public class JobDetailsFragment extends Fragment {
             public void onClick(View view) {
                 Map<String, String> map = new HashMap<>();
                 String userId = firebaseAuth.getCurrentUser().getUid();
-                map.put("time",Calendar.getInstance().getTimeInMillis()+"");
-                map.put("id",userId);
-                map.put("mobile",firebaseAuth.getCurrentUser().getPhoneNumber());
+                map.put("time", Calendar.getInstance().getTimeInMillis() + "");
+                map.put("id", userId);
+                map.put("mobile", firebaseAuth.getCurrentUser().getPhoneNumber());
                 fStore.collection("jobs").document(jobId).collection("applicants").document(userId).set(map);
-                Toast.makeText(context,"Applied for job successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Applied for job successfully", Toast.LENGTH_SHORT).show();
             }
         });
 

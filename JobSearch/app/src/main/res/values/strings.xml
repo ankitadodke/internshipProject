@@ -200,4 +200,14 @@ If you have any questions or suggestions about our Privacy Policy, do not hesita
     <string name="view_applicants">View Applicants</string>
     <string name="activity_title_applicants">Applicants</string>
     <string name="no_applicants">No Applicants Yet</string>
+    <string name="help_and_spport_first">Call not picked up? / Phone switch off?</string>
+    <string name="help_and_support_second">vacancy full?</string>
+    <string name="help_and_support_third">Fake/Fraud company?</string>
+    <string name="help_and_support_fourth">Consultancy asking for money?</string>
+    <string name="help_and_support_five">Not able to Logout</string>
+    <string name="help_and_spport_emp_first">Not getting Application??</string>
+    <string name="help_and_spport_emp_second">not able to post job??</string>
+    <string name="help_and_spport_emp_third">not receiving calls??</string>
+    <string name="help_and_spport_emp_forth">Consultancy?</string>
+    <string name="help_and_support_six">How to delete my account</string>
 </resources>

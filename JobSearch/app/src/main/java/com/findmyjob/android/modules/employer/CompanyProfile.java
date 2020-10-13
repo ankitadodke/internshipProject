@@ -26,11 +26,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,9 +75,9 @@ public class CompanyProfile extends AppCompatActivity {
                     user.put("location", Objects.requireNonNull(CompanyProfile.this.companyLocation.getText()).toString());
                     user.put("employeeCount", Objects.requireNonNull(CompanyProfile.this.companyNoOfEmp.getText()).toString());*/
 
-                docRef.set(new CompanyDetailsModel(companyName.getText().toString().trim(), comapnyDesc.getText().toString().trim(),
-                        companyType.getText().toString().trim(), comapnyPerksBenifits.getText().toString().trim(), companyLocation.getText().toString().trim(),
-                        companyNoOfEmp.getText().toString().trim())).addOnSuccessListener(new OnSuccessListener<Void>() {
+                docRef.set(new CompanyDetailsModel(Objects.requireNonNull(companyName.getText()).toString().trim(), Objects.requireNonNull(comapnyDesc.getText()).toString().trim(),
+                        Objects.requireNonNull(companyType.getText()).toString().trim(), Objects.requireNonNull(comapnyPerksBenifits.getText()).toString().trim(), Objects.requireNonNull(companyLocation.getText()).toString().trim(),
+                        Objects.requireNonNull(companyNoOfEmp.getText()).toString().trim())).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         StringBuilder sb = new StringBuilder();
@@ -155,7 +151,7 @@ public class CompanyProfile extends AppCompatActivity {
         progressDialog.setMessage("Uploading your  company logo");
         progressDialog.setProgress(0);
         progressDialog.show();
-        final StorageReference fileRef = storageReference.child("users/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "profile.jpg");
+        final StorageReference fileRef = storageReference.child("companyDetails/" + Objects.requireNonNull(fAuth.getCurrentUser()).getUid() + "logo.jpg");
         fileRef.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

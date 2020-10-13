@@ -171,15 +171,6 @@
         />
         </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/help"
-        android:layout_marginTop="16dp"
-        android:gravity="bottom|center"
-        android:textColor="@color/black"
-        />
-
     </LinearLayout>
 
 </ScrollView>
