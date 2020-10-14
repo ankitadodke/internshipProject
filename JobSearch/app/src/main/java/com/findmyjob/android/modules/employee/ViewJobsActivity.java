@@ -28,6 +28,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.findmyjob.android.R;
+import com.findmyjob.android.model.constants.SaveSharedPreference;
 import com.findmyjob.android.model.customObjects.JobPostModel;
 import com.findmyjob.android.modules.employer.HelpAndSupport;
 import com.findmyjob.android.modules.login.RegisterActivity;
@@ -57,10 +58,10 @@ public class ViewJobsActivity extends AppCompatActivity {
     ArrayList<JobPostModel> jobsList = new ArrayList<>();
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     DrawerLayout drawerLayout;
-    ImageView img1,companyLogo;
+    ImageView img1, companyLogo;
     StorageReference storageReference;
     private Context context;
-    private TextView txtError , userName;
+    private TextView txtError, userName;
     private FirebaseAuth mAuth;
 
     public static Intent getStartIntent(Context context) {
@@ -75,30 +76,6 @@ public class ViewJobsActivity extends AppCompatActivity {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-    }
-
-    public static void logout(final Activity activity) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle("Logout");
-        builder.setMessage("Are Your sure you want to logout?");
-
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent = new Intent(activity, RegisterActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                activity.startActivity(intent);
-            }
-        });
-
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        builder.show();
-
     }
 
     private static void redirectActivity(Activity activity, Class aClass) {
@@ -119,7 +96,8 @@ public class ViewJobsActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         progressLoading = findViewById(R.id.progressLoading);
         img1 = findViewById(R.id.userImage);
-        userName= findViewById(R.id.userName);
+        userName = findViewById(R.id.userName);
+
         storageReference = FirebaseStorage.getInstance().getReference();
         StorageReference profileRef = storageReference.child("users/" + Objects.requireNonNull(mAuth.getCurrentUser()).getUid() + "profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -130,6 +108,7 @@ public class ViewJobsActivity extends AppCompatActivity {
         });
         final RecyclerView recJobsList = findViewById(R.id.recJobsList);
         recJobsList.setLayoutManager(new LinearLayoutManager(context));
+
         if (!DeviceUtils.isOnline(context)) {
             //When network is unavailable
             Dialog dialog = new Dialog(this);
@@ -178,8 +157,7 @@ public class ViewJobsActivity extends AppCompatActivity {
                     Intent intent = new Intent(context, AddDetails.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
-                }
-                else
+                } else
                     userName.setText(documentSnapshot.getString("name"));
             }
         });
@@ -238,6 +216,29 @@ public class ViewJobsActivity extends AppCompatActivity {
 
     public void ClickLogout(View view) {
         logout(this);
+    }
+
+    public void logout(final Activity activity) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("Logout");
+        builder.setMessage("Are Your sure you want to logout?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                SaveSharedPreference.clearUserName(context);
+                startActivity(new Intent(context, RegisterActivity.class));
+                finish();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
     }
 
     @Override

@@ -24,7 +24,6 @@ import java.util.Objects;
 public class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHolder> {
 
     ArrayList<JobPostModel> jobsList;
-
     JobListAdapter(ArrayList<JobPostModel> list) {
         jobsList = list;
     }
@@ -69,7 +68,7 @@ public class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHold
             companyLogo = itemView.findViewById(R.id.companyIcon);
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-            StorageReference profileRef = storageReference.child("companyDetails/" + Objects.requireNonNull(mAuth.getCurrentUser()).getUid() + "logo.jpg");
+            StorageReference profileRef = storageReference.child("companyDetails/" + (mAuth.getCurrentUser()).getUid() + "logo.jpg");
             profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {

@@ -15,5 +15,6 @@ public class CompanyDetailsModel implements Serializable {
         this.perks = perks;
         this.location = location;
         this.employeeCount = employeeCount;
+
     }
 }
