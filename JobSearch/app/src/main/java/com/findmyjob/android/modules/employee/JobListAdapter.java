@@ -19,12 +19,11 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class JobListAdapter extends RecyclerView.Adapter<JobListAdapter.ViewHolder> {
 
     ArrayList<JobPostModel> jobsList;
-    JobListAdapter(ArrayList<JobPostModel> list) {
+    public JobListAdapter(ArrayList<JobPostModel> list) {
         jobsList = list;
     }
 

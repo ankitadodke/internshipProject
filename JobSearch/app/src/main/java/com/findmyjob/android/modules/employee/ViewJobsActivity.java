@@ -175,10 +175,6 @@ public class ViewJobsActivity extends AppCompatActivity {
         recreate();
     }
 
-    public void ClickDashboard(View view) {
-        redirectActivity(this, MyAccount.class);
-    }
-
     public void ClickDetails(View view) {
         redirectActivity(this, AddDetails.class);
     }

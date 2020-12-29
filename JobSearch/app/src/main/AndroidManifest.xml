@@ -22,9 +22,7 @@
         <activity android:name=".modules.employer.HelpAndSupport" />
         <activity android:name=".modules.employer.postedJobs.ViewApplicantsActivity" />
         <activity android:name=".modules.employer.postedJobs.ViewPostedJobsActivity" />
-        <activity android:name=".modules.employer.EmployerCallDetails" />
         <activity android:name=".modules.employee.ViewJobDetailsActivity" />
-        <activity android:name=".modules.employer.ViewJobApplicationsEMP" />
         <activity android:name=".modules.employer.PrivacyEmployer" />
         <activity android:name=".modules.employee.PrivacyActivity" />
 
@@ -35,8 +33,6 @@
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
 
-        <activity android:name=".modules.employee.MyCalls" />
-        <activity android:name=".modules.employee.MyAccount" />
         <activity
             android:name=".modules.employee.ViewJobsActivity"
             android:screenOrientation="portrait" />
