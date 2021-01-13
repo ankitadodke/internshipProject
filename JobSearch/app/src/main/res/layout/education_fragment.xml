@@ -167,6 +167,15 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/general_section_top_margin"
+            android:background="@drawable/primary_btn_bg_enabled"
+            android:padding="5dp"
+            android:text="@string/click_to_upload_resume"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </LinearLayout>
 </ScrollView>

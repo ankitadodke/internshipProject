@@ -60,6 +60,7 @@ public class ViewApplicantsActivity extends AppCompatActivity {
         progressLoading = findViewById(R.id.progressLoading);
         txtError = findViewById(R.id.txtError);
 
+
         recApplicants = findViewById(R.id.recApplicants);
         recApplicants.setLayoutManager(new LinearLayoutManager(context));
 

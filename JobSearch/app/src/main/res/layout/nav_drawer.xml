@@ -88,16 +88,6 @@
                 android:text="@string/job" />
 
             <TextView
-                android:id="@+id/applications"
-                style="@style/DrawerItems"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_applications"
-                android:onClick="ClickDashboard"
-                android:text="@string/applied" />
-
-
-            <TextView
                 android:id="@+id/profile"
                 style="@style/DrawerItems"
                 android:layout_width="match_parent"

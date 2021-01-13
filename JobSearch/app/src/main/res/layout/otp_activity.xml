@@ -10,15 +10,15 @@
     tools:context=".modules.login.OTPActivity"
     android:background="@color/white"
     >
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:layout_gravity="top"
-        android:src="@drawable/otp"
+        android:src="@drawable/otp_img"
         android:contentDescription="@string/otp" />
     <TextView
         android:layout_width="match_parent"

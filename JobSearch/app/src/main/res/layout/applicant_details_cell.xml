@@ -5,13 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin">
 
     <TextView
         android:id="@+id/txtName"
         style="@style/TextLarge"
         android:layout_width="match_parent"
-        tools:text="Suyog Samudra"
+        tools:text="abc"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -29,4 +30,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp" />
+
+    <Button
+        android:id="@+id/btnResume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@drawable/primary_btn_bg_enabled"
+        android:gravity="center"
+        android:text="@string/add_resume_view_existing"
+        android:textColor="@color/white" />
 </LinearLayout>
